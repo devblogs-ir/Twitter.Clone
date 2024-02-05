@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelationshipService", "RelationshipService.csproj", "{AA848F35-5B78-4CE0-97DA-4294FE6CA59B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA848F35-5B78-4CE0-97DA-4294FE6CA59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA848F35-5B78-4CE0-97DA-4294FE6CA59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA848F35-5B78-4CE0-97DA-4294FE6CA59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA848F35-5B78-4CE0-97DA-4294FE6CA59B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35BB943E-49A5-4DBE-85DC-293721D20995}
+	EndGlobalSection
+EndGlobal

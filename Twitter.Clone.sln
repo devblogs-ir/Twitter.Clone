@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{5D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Trends", "src\services\trends\Twitter.Clone.Trends\Twitter.Clone.Trends.csproj", "{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{6A7F2781-0F44-4F40-9E28-07B209EA38C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Signatures", "src\shared\Twitter.Clone.Signatures\Twitter.Clone.Signatures.csproj", "{EE919C6C-FB9F-49D7-A783-B4B6F1137247}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +57,10 @@ Global
 		{115B3944-B02B-4CF4-8335-7976DF431D92} = {9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}
 		{5DB1F3BB-D6B2-4011-8E78-28DAE8D2D46F} = {C5172DED-23A1-480D-9898-CAF450ED1CAA}
 		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A} = {5DB1F3BB-D6B2-4011-8E78-28DAE8D2D46F}
+		{6A7F2781-0F44-4F40-9E28-07B209EA38C6} = {C5172DED-23A1-480D-9898-CAF450ED1CAA}
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247} = {6A7F2781-0F44-4F40-9E28-07B209EA38C6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91D1DBF1-5D1B-44D6-A5A8-5F0A11AC41B3}
 	EndGlobalSection
 EndGlobal

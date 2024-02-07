@@ -11,4 +11,16 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Features\FollowFeature\" />
+    <Folder Include="Features\FollowerFeature\" />
+    <Folder Include="Features\FollowingFeature\" />
+    <Folder Include="Features\SharedKernel\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

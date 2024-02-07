@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Relationship.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Relationship.Entities", "..\Twitter.Clone.Relationship.Entities\Twitter.Clone.Relationship.Entities.csproj", "{9C25CDE8-601D-485B-831B-22481D78B363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Features", "..\Features\Features.csproj", "{08BD4AE8-90C2-41EE-831A-928669456B03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Relationship.Features", "..\Twitter.Clone.Relationship.Features\Twitter.Clone.Relationship.Features.csproj", "{626043D8-A5BF-4BE7-B570-B2E864D03237}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,10 @@ Global
 		{9C25CDE8-601D-485B-831B-22481D78B363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C25CDE8-601D-485B-831B-22481D78B363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C25CDE8-601D-485B-831B-22481D78B363}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08BD4AE8-90C2-41EE-831A-928669456B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08BD4AE8-90C2-41EE-831A-928669456B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08BD4AE8-90C2-41EE-831A-928669456B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08BD4AE8-90C2-41EE-831A-928669456B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626043D8-A5BF-4BE7-B570-B2E864D03237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626043D8-A5BF-4BE7-B570-B2E864D03237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626043D8-A5BF-4BE7-B570-B2E864D03237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626043D8-A5BF-4BE7-B570-B2E864D03237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

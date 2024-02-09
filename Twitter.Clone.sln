@@ -7,11 +7,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C5172DED-23A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.UnitTests", "tests\Twitter.Clone.UnitTests\Twitter.Clone.UnitTests.csproj", "{8B7038D5-583B-4348-894F-FA4FE47A933E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.UnitTests", "tests\Twitter.Clone.UnitTests\Twitter.Clone.UnitTests.csproj", "{8B7038D5-583B-4348-894F-FA4FE47A933E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.IntegrationTests", "tests\Twitter.Clone.IntegrationTests\Twitter.Clone.IntegrationTests.csproj", "{01CE2511-0D00-4D6F-8EF6-094ED24AE7F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.IntegrationTests", "tests\Twitter.Clone.IntegrationTests\Twitter.Clone.IntegrationTests.csproj", "{01CE2511-0D00-4D6F-8EF6-094ED24AE7F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.FunctionalTests", "tests\Twitter.Clone.FunctionalTests\Twitter.Clone.FunctionalTests.csproj", "{115B3944-B02B-4CF4-8335-7976DF431D92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.FunctionalTests", "tests\Twitter.Clone.FunctionalTests\Twitter.Clone.FunctionalTests.csproj", "{115B3944-B02B-4CF4-8335-7976DF431D92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{5DB1F3BB-D6B2-4011-8E78-28DAE8D2D46F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Trends", "src\services\trends\Twitter.Clone.Trends\Twitter.Clone.Trends.csproj", "{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{6A7F2781-0F44-4F40-9E28-07B209EA38C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Signatures", "src\shared\Twitter.Clone.Signatures\Twitter.Clone.Signatures.csproj", "{EE919C6C-FB9F-49D7-A783-B4B6F1137247}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "trends", "trends", "{95EC1D56-C7F4-45BF-8A0F-F60D2D18180A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity-provider", "identity-provider", "{93B2573B-E3AD-47A8-B42F-26B7FB466554}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.IdentityProvider.Presentation", "src\services\identity-provider\Twitter.Clone.IdentityProvider.Presentation\Twitter.Clone.IdentityProvider.Presentation.csproj", "{783062B5-EA0D-49DA-B068-45B16D156EF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.IdentityPrvider.Application", "src\services\identity-provider\Twitter.Clone.IdentityPrvider.Application\Twitter.Clone.IdentityPrvider.Application.csproj", "{A337C726-F0F3-4DA6-A770-98F270887A19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.IdentityPrvider.Domain", "src\services\identity-provider\Twitter.Clone.IdentityPrvider.Domain\Twitter.Clone.IdentityPrvider.Domain.csproj", "{0C6A45E1-8586-49E7-8C38-DCA5EDB3B660}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.IdentityPrvider.Infrastructure", "src\services\identity-provider\Twitter.Clone.IdentityPrvider.Infrastructure\Twitter.Clone.IdentityPrvider.Infrastructure.csproj", "{9463BEB8-F4EE-493C-BABB-8DD0AC4B6694}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +51,30 @@ Global
 		{115B3944-B02B-4CF4-8335-7976DF431D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{115B3944-B02B-4CF4-8335-7976DF431D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{115B3944-B02B-4CF4-8335-7976DF431D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783062B5-EA0D-49DA-B068-45B16D156EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783062B5-EA0D-49DA-B068-45B16D156EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783062B5-EA0D-49DA-B068-45B16D156EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783062B5-EA0D-49DA-B068-45B16D156EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A337C726-F0F3-4DA6-A770-98F270887A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A337C726-F0F3-4DA6-A770-98F270887A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A337C726-F0F3-4DA6-A770-98F270887A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A337C726-F0F3-4DA6-A770-98F270887A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6A45E1-8586-49E7-8C38-DCA5EDB3B660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6A45E1-8586-49E7-8C38-DCA5EDB3B660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6A45E1-8586-49E7-8C38-DCA5EDB3B660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6A45E1-8586-49E7-8C38-DCA5EDB3B660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9463BEB8-F4EE-493C-BABB-8DD0AC4B6694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9463BEB8-F4EE-493C-BABB-8DD0AC4B6694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9463BEB8-F4EE-493C-BABB-8DD0AC4B6694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9463BEB8-F4EE-493C-BABB-8DD0AC4B6694}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +83,18 @@ Global
 		{8B7038D5-583B-4348-894F-FA4FE47A933E} = {9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}
 		{01CE2511-0D00-4D6F-8EF6-094ED24AE7F0} = {9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}
 		{115B3944-B02B-4CF4-8335-7976DF431D92} = {9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}
+		{5DB1F3BB-D6B2-4011-8E78-28DAE8D2D46F} = {C5172DED-23A1-480D-9898-CAF450ED1CAA}
+		{17194AD4-A455-4CCC-B3C9-CBA7EC86373A} = {95EC1D56-C7F4-45BF-8A0F-F60D2D18180A}
+		{6A7F2781-0F44-4F40-9E28-07B209EA38C6} = {C5172DED-23A1-480D-9898-CAF450ED1CAA}
+		{EE919C6C-FB9F-49D7-A783-B4B6F1137247} = {6A7F2781-0F44-4F40-9E28-07B209EA38C6}
+		{95EC1D56-C7F4-45BF-8A0F-F60D2D18180A} = {5DB1F3BB-D6B2-4011-8E78-28DAE8D2D46F}
+		{93B2573B-E3AD-47A8-B42F-26B7FB466554} = {5DB1F3BB-D6B2-4011-8E78-28DAE8D2D46F}
+		{783062B5-EA0D-49DA-B068-45B16D156EF8} = {93B2573B-E3AD-47A8-B42F-26B7FB466554}
+		{A337C726-F0F3-4DA6-A770-98F270887A19} = {93B2573B-E3AD-47A8-B42F-26B7FB466554}
+		{0C6A45E1-8586-49E7-8C38-DCA5EDB3B660} = {93B2573B-E3AD-47A8-B42F-26B7FB466554}
+		{9463BEB8-F4EE-493C-BABB-8DD0AC4B6694} = {93B2573B-E3AD-47A8-B42F-26B7FB466554}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91D1DBF1-5D1B-44D6-A5A8-5F0A11AC41B3}
 	EndGlobalSection
 EndGlobal

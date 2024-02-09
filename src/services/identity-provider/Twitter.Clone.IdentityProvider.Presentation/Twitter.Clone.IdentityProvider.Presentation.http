@@ -1,0 +1,6 @@
+@Twitter.Clone.IdentityProvider.Presentation_HostAddress = http://localhost:5274
+
+GET {{Twitter.Clone.IdentityProvider.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

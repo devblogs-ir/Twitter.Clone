@@ -16,7 +16,7 @@ As a **registered user**, I want to **Show My Messages** which I sent and reciev
 
 
 
-* **Show My Messages***: The need to See the List Of My Messages betwwn another users.
+* **Show My Messages***: The need to See the List Of My Messages between another users.
 
 
 ## **Purpose**

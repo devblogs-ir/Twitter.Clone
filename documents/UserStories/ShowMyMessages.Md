@@ -34,13 +34,14 @@ As a **registered user**, I want to **Show My Messages** which I sent and reciev
           other users by a database query.
     
 2. **Validation and Error Handling**:
-    * No especial validation is not requiered. for relate guery just recipient’s user ID is requierde which exists in the system.
+    * No especial validation is requiered. for relate guery just recipient’s user ID is requierde which exists in the system.
     * Handling first time request and when user deleted all messages is the matter that may return null value.
 
 6. **Notifications**:
-    * Implement notifications in list of recieved messages, by query result of how many messages have not been seen.
+    * Implement notifications in the list of recieved messages, by query result of how many messages have not been seen.
 
 
 ## **Conclusion**
 
-The “Send Direct Message” feature is critical for enabling private communication within our Direct Message service. By analyzing this user story, we can create a clear path for implementation, address potential challenges, and ensure a seamless user experience.
+The “Show My Messages” feature is important as a history of chats between current user and other users. This issue is a show room of the service and can be a timeline of
+actions that current user has done up to now.

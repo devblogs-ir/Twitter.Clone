@@ -5,5 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Twitter.Clone.Tweet.Domain\Twitter.Clone.Tweet.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Twitter.Clone.Tweet.Domain\Twitter.Clone.Tweet.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="MongoDB.EntityFrameworkCore" Version="7.0.0-preview.1" />
+  </ItemGroup> 
+
 </Project>

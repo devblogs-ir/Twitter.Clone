@@ -1,21 +1,13 @@
-using Twitter.Clone.Tweet.Infrastructure.Persistence.DbContext;
-using Microsoft.EntityFrameworkCore;
-using Twitter.Clone.Tweet.WebApi.Model;
+using MediatR; 
+using Twitter.Clone.Tweet.WebApi;
+using Twitter.Clone.Tweet.Application.Tweet.Command.CreateTweet;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Get Settings from appsettings.json
-var _mongoDbConfigurations = new MongoDbConfigurationModel();
-builder.Configuration.GetSection("MongoDbConfiguration").Bind(_mongoDbConfigurations);  
 
 // Add services to the container. 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<TweetDbContext>(options => options.UseMongoDB(
-        connectionString: _mongoDbConfigurations.ConnectionString ?? "mongodb://localhost:27017", 
-        databaseName: _mongoDbConfigurations.DatabaseName ?? "TweetDb"
-    )
-);
+builder.Services.RegisterPresentationServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -27,10 +19,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
- 
-app.MapGet("/tweet", () =>
-{
-    Console.WriteLine("Test");
-}) 
-.WithOpenApi();
+app.MapPost("/tweet", async (CreateTweetCommand command, IMediator mediator) =>
+    {
+        var result = await mediator.Send(command);
+    })
+    .WithOpenApi();
 app.Run();

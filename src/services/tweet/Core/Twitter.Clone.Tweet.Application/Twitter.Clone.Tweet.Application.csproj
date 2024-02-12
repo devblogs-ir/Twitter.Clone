@@ -9,5 +9,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Twitter.Clone.Tweet.Domain\Twitter.Clone.Tweet.Domain.csproj" />
   </ItemGroup>
+   
+  <ItemGroup> 
+    <PackageReference Include="MediatR" Version="12.2.0" /> 
+  </ItemGroup>
 
 </Project>

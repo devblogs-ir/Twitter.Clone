@@ -18,10 +18,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection(); 
 app.MapPost("/tweet", async (CreateTweetCommand command, IMediator mediator) =>
     {
         var result = await mediator.Send(command);
+        return result;
     })
     .WithOpenApi();
 app.Run();

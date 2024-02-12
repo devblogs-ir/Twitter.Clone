@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Twitter.Clone.Search.Infrastracture\Twitter.Clone.Search.Infrastracture.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

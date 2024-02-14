@@ -19,9 +19,9 @@ public class NotificationService : Notification.NotificationBase
         UserNotificationResponse response = new()
         {
             EmailNotificationSetting = _dbContext.EmailNotificationSettings.
-            SingleOrDefault(p => p.UserId.ToString() == request.UserId)!,
+            Find(request.UserId)!,
             SmsNotificationSetting = _dbContext.SmsNotificationSettings
-            .SingleOrDefault(p => p.UserId.ToString() == request.UserId)!,
+            .Find(request.UserId)!,
         };
 
         return Task.FromResult(new GetUserNotificationSettingsReply

@@ -1,4 +1,4 @@
-﻿namespace Twitter.Clone.Settings.Domain.Entities;
+﻿namespace Twitter.Clone.Settings.Entities;
 
 public abstract class NotificationSetting
 {

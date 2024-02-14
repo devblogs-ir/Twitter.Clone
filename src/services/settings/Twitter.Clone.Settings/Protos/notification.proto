@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Twitter.Clone.Settings";
+
+package notification;
+
+service Notification {
+  rpc GetUserNotificationSettings (GetUserNotificationSettingsRequest) 
+  returns (GetUserNotificationSettingsReply) {}
+}
+
+message GetUserNotificationSettingsRequest {
+  string user_id = 1;
+}
+
+message GetUserNotificationSettingsReply {
+  string user_id = 1;
+  bool is_active = 2;
+  bool is_mention_active = 3;
+  bool is_direct_message_active = 4;
+  bool is_follow_active = 5;
+  bool is_password_change_active = 6;
+}

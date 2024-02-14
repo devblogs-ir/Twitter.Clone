@@ -33,7 +33,6 @@
     <Folder Include="Business\" />
     <Folder Include="Context\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Protos\" />
   </ItemGroup>
 
 </Project>

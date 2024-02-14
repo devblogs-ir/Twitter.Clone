@@ -1,6 +1,6 @@
 ﻿using Grpc.Core;
-using Twitter.Clone.Settings.Business;
 using Twitter.Clone.Settings.Context;
+using Twitter.Clone.Settings.Entities;
 
 namespace Twitter.Clone.Settings.Services;
 
@@ -17,21 +17,21 @@ public class NotificationService : Notification.NotificationBase
         GetUserNotificationSettingsRequest request,
         ServerCallContext context)
     {
-        UserNotificationResponse response = new()
-        {
-            EmailNotificationSetting = _dbContext.EmailNotificationSettings.
-            Find(request.UserId)!,
-            SmsNotificationSetting = _dbContext.SmsNotificationSettings
-            .Find(request.UserId)!,
-        };
+        var response = new NotificationSettingsBuilder().
+            WithEmailSettings(_dbContext.EmailNotificationSettings.
+            Find(request.UserId)!).
+            WithSmsSettings(_dbContext.SmsNotificationSettings
+            .Find(request.UserId)!)
+            .Build();
+
 
         return Task.FromResult(new GetUserNotificationSettingsReply
         {
-            IsEmailActive = response.EmailNotificationSetting.IsActive,
+            IsEmailActive = response.EmailNotificationSetting!.IsActive!,
             IsMentionActive = response.EmailNotificationSetting.IsMentionActive,
             IsDirectMessageActive = response.EmailNotificationSetting.IsDirectMessageActive,
             IsFollowActive = response.EmailNotificationSetting.IsFollowActive,
-            IsSmsActive = response.SmsNotificationSetting.IsActive,
+            IsSmsActive = response.SmsNotificationSetting!.IsActive,
             IsPasswordChangeActive = response.SmsNotificationSetting.IsPasswordChangeActive
         });
     }

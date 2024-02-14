@@ -25,6 +25,7 @@ public class SettingsDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(SettingsDbContext).Assembly);
         modelBuilder.Entity<BlockedListSetting>().UseTpcMappingStrategy();
         modelBuilder.Entity<NotificationSetting>().UseTpcMappingStrategy();
     }

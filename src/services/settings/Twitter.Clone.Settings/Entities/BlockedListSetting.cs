@@ -1,8 +1,7 @@
 ﻿namespace Twitter.Clone.Settings.Entities;
 
-public abstract class BlockedListSetting
+public abstract class BlockedListSetting : BaseEntity
 {
-    public int UserId { get; set; }
 }
 
 public class BlockedUser : BlockedListSetting

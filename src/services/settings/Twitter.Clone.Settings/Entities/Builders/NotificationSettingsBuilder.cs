@@ -1,10 +1,12 @@
 ﻿using Azure;
+using Twitter.Clone.Settings.Entities.Dtos;
+using Twitter.Clone.Settings.Entities.Models;
 
-namespace Twitter.Clone.Settings.Entities
+namespace Twitter.Clone.Settings.Entities.Builders
 {
     public class NotificationSettingsBuilder
     {
-        private NotificationSettingsResponse _response;
+        private NotificationSettingsDto _response;
         public NotificationSettingsBuilder WithEmailSettings(EmailNotificationSetting settings)
         {
             _response.EmailNotificationSetting = settings;
@@ -17,6 +19,6 @@ namespace Twitter.Clone.Settings.Entities
             return this;
         }
 
-        public NotificationSettingsResponse Build() => _response;
+        public NotificationSettingsDto Build() => _response;
     }
 }

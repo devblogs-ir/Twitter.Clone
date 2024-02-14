@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Twitter.Clone.Settings.Entities;
+using Twitter.Clone.Settings.Entities.Models;
 
 namespace Twitter.Clone.Settings.Context;
 

@@ -1,6 +1,6 @@
 ﻿using Grpc.Core;
 using Twitter.Clone.Settings.Context;
-using Twitter.Clone.Settings.Entities;
+using Twitter.Clone.Settings.Entities.Builders;
 
 namespace Twitter.Clone.Settings.Services;
 
@@ -17,7 +17,7 @@ public class NotificationService : Notification.NotificationBase
         GetUserNotificationSettingsRequest request,
         ServerCallContext context)
     {
-        var response = new UserNotificationSettingsBuilder().
+        var response = new NotificationSettingsBuilder().
             WithEmailSettings(_dbContext.EmailNotificationSettings.
             Find(request.UserId)!).
             WithSmsSettings(_dbContext.SmsNotificationSettings

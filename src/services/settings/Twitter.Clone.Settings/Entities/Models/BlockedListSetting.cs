@@ -1,4 +1,4 @@
-﻿namespace Twitter.Clone.Settings.Entities;
+﻿namespace Twitter.Clone.Settings.Entities.Models;
 
 public abstract class BlockedListSetting : BaseEntity
 {

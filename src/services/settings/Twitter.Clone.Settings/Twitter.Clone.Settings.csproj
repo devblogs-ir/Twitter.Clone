@@ -24,9 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Business\" />
     <Folder Include="Context\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Business\" />
   </ItemGroup>
 
 </Project>

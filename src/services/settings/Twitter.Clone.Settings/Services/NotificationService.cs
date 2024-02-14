@@ -12,6 +12,7 @@ public class NotificationService : Notification.NotificationBase
     {
         _dbContext = dbContext;
     }
+
     public override Task<GetUserNotificationSettingsReply> GetUserNotificationSettings(
         GetUserNotificationSettingsRequest request,
         ServerCallContext context)

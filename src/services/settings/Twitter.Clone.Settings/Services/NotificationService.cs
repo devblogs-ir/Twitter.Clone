@@ -17,7 +17,7 @@ public class NotificationService : Notification.NotificationBase
         GetUserNotificationSettingsRequest request,
         ServerCallContext context)
     {
-        var response = new NotificationSettingsBuilder().
+        var response = new UserNotificationSettingsBuilder().
             WithEmailSettings(_dbContext.EmailNotificationSettings.
             Find(request.UserId)!).
             WithSmsSettings(_dbContext.SmsNotificationSettings

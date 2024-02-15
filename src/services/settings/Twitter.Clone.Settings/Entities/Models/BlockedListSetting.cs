@@ -1,7 +1,12 @@
-﻿namespace Twitter.Clone.Settings.Entities.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
-public abstract class BlockedListSetting : BaseEntity
+namespace Twitter.Clone.Settings.Entities.Models;
+
+public abstract class BlockedListSetting
 {
+    [Key]
+    public Guid Id { get; set; }
+    public Guid UserId { get; set; }
 }
 
 public class BlockedUser : BlockedListSetting

@@ -11,10 +11,10 @@ public abstract class BlockedListSetting
 
 public class BlockedUser : BlockedListSetting
 {
-    public int BlockedUserId { get; set; }
+    public Guid BlockedUserId { get; set; }
 }
 
 public class BlockedPage : BlockedListSetting
 {
-    public int BlockedPageId { get; set; }
+    public Guid BlockedPageId { get; set; }
 }

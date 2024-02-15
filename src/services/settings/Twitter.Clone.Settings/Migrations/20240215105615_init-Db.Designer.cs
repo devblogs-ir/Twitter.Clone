@@ -12,7 +12,7 @@ using Twitter.Clone.Settings.Context;
 namespace Twitter.Clone.Settings.Migrations
 {
     [DbContext(typeof(SettingsDbContext))]
-    [Migration("20240215101743_init-Db")]
+    [Migration("20240215105615_init-Db")]
     partial class initDb
     {
         /// <inheritdoc />
@@ -61,8 +61,8 @@ namespace Twitter.Clone.Settings.Migrations
                 {
                     b.HasBaseType("Twitter.Clone.Settings.Entities.Models.BlockedListSetting");
 
-                    b.Property<int>("BlockedPageId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BlockedPageId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.ToTable("BlockedPages");
                 });
@@ -71,8 +71,8 @@ namespace Twitter.Clone.Settings.Migrations
                 {
                     b.HasBaseType("Twitter.Clone.Settings.Entities.Models.BlockedListSetting");
 
-                    b.Property<int>("BlockedUserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BlockedUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.ToTable("BlockedUsers");
                 });

@@ -58,8 +58,8 @@ namespace Twitter.Clone.Settings.Migrations
                 {
                     b.HasBaseType("Twitter.Clone.Settings.Entities.Models.BlockedListSetting");
 
-                    b.Property<int>("BlockedPageId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BlockedPageId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.ToTable("BlockedPages");
                 });
@@ -68,8 +68,8 @@ namespace Twitter.Clone.Settings.Migrations
                 {
                     b.HasBaseType("Twitter.Clone.Settings.Entities.Models.BlockedListSetting");
 
-                    b.Property<int>("BlockedUserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BlockedUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.ToTable("BlockedUsers");
                 });

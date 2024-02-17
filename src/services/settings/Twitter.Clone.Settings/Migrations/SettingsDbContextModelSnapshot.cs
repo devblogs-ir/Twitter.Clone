@@ -22,11 +22,18 @@ namespace Twitter.Clone.Settings.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.BlockedListSetting", b =>
+            modelBuilder.HasSequence("BlockedListSettingSequence");
+
+            modelBuilder.HasSequence("NotificationSettingSequence");
+
+            modelBuilder.Entity("Twitter.Clone.Settings.Entities.BlockedListSetting", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<decimal>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("decimal(20,0)")
+                        .HasDefaultValueSql("NEXT VALUE FOR [BlockedListSettingSequence]");
+
+                    SqlServerPropertyBuilderExtensions.UseSequence(b.Property<decimal>("Id"));
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -38,45 +45,55 @@ namespace Twitter.Clone.Settings.Migrations
                     b.UseTpcMappingStrategy();
                 });
 
-            modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.NotificationSetting", b =>
+            modelBuilder.Entity("Twitter.Clone.Settings.Entities.NotificationSetting", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<decimal>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("decimal(20,0)")
+                        .HasDefaultValueSql("NEXT VALUE FOR [NotificationSettingSequence]");
+
+                    SqlServerPropertyBuilderExtensions.UseSequence(b.Property<decimal>("Id"));
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.HasKey("UserId");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
 
                     b.ToTable((string)null);
 
                     b.UseTpcMappingStrategy();
                 });
 
-            modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.BlockedPage", b =>
+            modelBuilder.Entity("Twitter.Clone.Settings.Entities.BlockedPage", b =>
                 {
-                    b.HasBaseType("Twitter.Clone.Settings.Entities.Models.BlockedListSetting");
+                    b.HasBaseType("Twitter.Clone.Settings.Entities.BlockedListSetting");
 
                     b.Property<Guid>("BlockedPageId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.ToTable("BlockedPages", (string)null);
+                    b.HasIndex("Id");
+
+                    b.ToTable("BlockedPages");
                 });
 
-            modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.BlockedUser", b =>
+            modelBuilder.Entity("Twitter.Clone.Settings.Entities.BlockedUser", b =>
                 {
-                    b.HasBaseType("Twitter.Clone.Settings.Entities.Models.BlockedListSetting");
+                    b.HasBaseType("Twitter.Clone.Settings.Entities.BlockedListSetting");
 
                     b.Property<Guid>("BlockedUserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.ToTable("BlockedUsers", (string)null);
+                    b.HasIndex("Id");
+
+                    b.ToTable("BlockedUsers");
                 });
 
-            modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.EmailNotificationSetting", b =>
+            modelBuilder.Entity("Twitter.Clone.Settings.Entities.EmailNotificationSetting", b =>
                 {
-                    b.HasBaseType("Twitter.Clone.Settings.Entities.Models.NotificationSetting");
+                    b.HasBaseType("Twitter.Clone.Settings.Entities.NotificationSetting");
 
                     b.Property<bool>("IsDirectMessageActive")
                         .HasColumnType("bit");
@@ -87,17 +104,21 @@ namespace Twitter.Clone.Settings.Migrations
                     b.Property<bool>("IsMentionActive")
                         .HasColumnType("bit");
 
-                    b.ToTable("EmailNotificationSettings", (string)null);
+                    b.HasIndex("Id");
+
+                    b.ToTable("EmailNotificationSettings");
                 });
 
-            modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.SmsNotificationSetting", b =>
+            modelBuilder.Entity("Twitter.Clone.Settings.Entities.SmsNotificationSetting", b =>
                 {
-                    b.HasBaseType("Twitter.Clone.Settings.Entities.Models.NotificationSetting");
+                    b.HasBaseType("Twitter.Clone.Settings.Entities.NotificationSetting");
 
                     b.Property<bool>("IsPasswordChangeActive")
                         .HasColumnType("bit");
 
-                    b.ToTable("SmsNotificationSettings", (string)null);
+                    b.HasIndex("Id");
+
+                    b.ToTable("SmsNotificationSettings");
                 });
 #pragma warning restore 612, 618
         }

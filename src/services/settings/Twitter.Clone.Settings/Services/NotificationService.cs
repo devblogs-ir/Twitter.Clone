@@ -1,6 +1,5 @@
 ﻿using Grpc.Core;
 using Twitter.Clone.Settings.Context;
-using Twitter.Clone.Settings.Entities.Models;
 
 namespace Twitter.Clone.Settings.Services;
 
@@ -18,9 +17,9 @@ public class NotificationService : Notification.NotificationBase
         ServerCallContext context)
     {
         var emailSettings = _dbContext.EmailNotificationSettings.
-            SingleOrDefault(p => p.UserId.ToString() == request.UserId)!;
+            FirstOrDefault(p => p.UserId.ToString() == request.UserId)!;
         var smsSettings = _dbContext.SmsNotificationSettings.
-            SingleOrDefault(p => p.UserId.ToString() == request.UserId)!;
+            FirstOrDefault(p => p.UserId.ToString() == request.UserId)!;
 
         return Task.FromResult(new GetUserNotificationSettingsReply
         {

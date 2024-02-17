@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Twitter.Clone.Settings.Migrations
 {
     /// <inheritdoc />
-    public partial class initDb : Migration
+    public partial class initdb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -70,6 +70,30 @@ namespace Twitter.Clone.Settings.Migrations
                 {
                     table.PrimaryKey("PK_SmsNotificationSettings", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BlockedPages_UserId",
+                table: "BlockedPages",
+                column: "UserId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BlockedUsers_UserId",
+                table: "BlockedUsers",
+                column: "UserId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EmailNotificationSettings_UserId",
+                table: "EmailNotificationSettings",
+                column: "UserId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SmsNotificationSettings_UserId",
+                table: "SmsNotificationSettings",
+                column: "UserId",
+                unique: true);
         }
 
         /// <inheritdoc />

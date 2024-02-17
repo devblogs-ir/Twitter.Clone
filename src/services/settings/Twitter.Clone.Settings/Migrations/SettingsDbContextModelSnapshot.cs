@@ -38,6 +38,9 @@ namespace Twitter.Clone.Settings.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
                     b.ToTable("BlockedPages");
                 });
 
@@ -56,6 +59,9 @@ namespace Twitter.Clone.Settings.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("BlockedUsers");
                 });
@@ -85,6 +91,9 @@ namespace Twitter.Clone.Settings.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
                     b.ToTable("EmailNotificationSettings");
                 });
 
@@ -106,6 +115,9 @@ namespace Twitter.Clone.Settings.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("SmsNotificationSettings");
                 });

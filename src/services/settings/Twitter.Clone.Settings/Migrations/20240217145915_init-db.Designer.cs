@@ -12,8 +12,8 @@ using Twitter.Clone.Settings.Context;
 namespace Twitter.Clone.Settings.Migrations
 {
     [DbContext(typeof(SettingsDbContext))]
-    [Migration("20240217132854_init-Db")]
-    partial class initDb
+    [Migration("20240217145915_init-db")]
+    partial class initdb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace Twitter.Clone.Settings.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
                     b.ToTable("BlockedPages");
                 });
 
@@ -59,6 +62,9 @@ namespace Twitter.Clone.Settings.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("BlockedUsers");
                 });
@@ -88,6 +94,9 @@ namespace Twitter.Clone.Settings.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
                     b.ToTable("EmailNotificationSettings");
                 });
 
@@ -109,6 +118,9 @@ namespace Twitter.Clone.Settings.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("SmsNotificationSettings");
                 });

@@ -3,4 +3,5 @@
 public class BaseEntity
 {
     public ulong Id { get; set; }
+    public Guid UserId { get; set; }
 }

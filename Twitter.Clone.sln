@@ -21,6 +21,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Notifier.Host
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Notifier.Service", "src\services\notifier\Twitter.Clone.Notifier.Service\Twitter.Clone.Notifier.Service.csproj", "{D85431E0-806F-4CDB-9F33-5E12F7203697}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "features", "features", "{321FAEE6-5FFE-4101-94FB-EEB2A76E225E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Notifier.Features.Email", "src\services\notifier\Twitter.Clone.Notifier.Features.Email\Twitter.Clone.Notifier.Features.Email.csproj", "{6EE979BB-B1E5-42AC-A53C-806F4431BE96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Notifier.Features.Push", "src\services\notifier\Twitter.Clone.Notifier.Features.Push\Twitter.Clone.Notifier.Features.Push.csproj", "{ADB996E1-0208-4432-9ADF-160273EAF731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Notifier.Features.ShortMessage", "src\services\notifier\Twitter.Clone.Notifier.Features.ShortMessage\Twitter.Clone.Notifier.Features.ShortMessage.csproj", "{8C8BCA34-6132-4B53-89CB-D17F7CD0B14B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Notifier.Core", "src\services\notifier\Twitter.Clone.Notifier.Core\Twitter.Clone.Notifier.Core.csproj", "{BFB7CA9F-D3E9-4654-BC9D-CA2761471C27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +57,22 @@ Global
 		{D85431E0-806F-4CDB-9F33-5E12F7203697}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D85431E0-806F-4CDB-9F33-5E12F7203697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D85431E0-806F-4CDB-9F33-5E12F7203697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE979BB-B1E5-42AC-A53C-806F4431BE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE979BB-B1E5-42AC-A53C-806F4431BE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE979BB-B1E5-42AC-A53C-806F4431BE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE979BB-B1E5-42AC-A53C-806F4431BE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB996E1-0208-4432-9ADF-160273EAF731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB996E1-0208-4432-9ADF-160273EAF731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB996E1-0208-4432-9ADF-160273EAF731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB996E1-0208-4432-9ADF-160273EAF731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C8BCA34-6132-4B53-89CB-D17F7CD0B14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8BCA34-6132-4B53-89CB-D17F7CD0B14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8BCA34-6132-4B53-89CB-D17F7CD0B14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8BCA34-6132-4B53-89CB-D17F7CD0B14B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFB7CA9F-D3E9-4654-BC9D-CA2761471C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB7CA9F-D3E9-4654-BC9D-CA2761471C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB7CA9F-D3E9-4654-BC9D-CA2761471C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFB7CA9F-D3E9-4654-BC9D-CA2761471C27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +85,11 @@ Global
 		{2AEB1CBC-DA7F-45ED-BF33-4DD1EE1BCD6A} = {97D0C25C-4551-4630-A556-45BE8F0C292E}
 		{65571FCE-D974-48E6-B9F0-718E0C733882} = {2AEB1CBC-DA7F-45ED-BF33-4DD1EE1BCD6A}
 		{D85431E0-806F-4CDB-9F33-5E12F7203697} = {2AEB1CBC-DA7F-45ED-BF33-4DD1EE1BCD6A}
+		{321FAEE6-5FFE-4101-94FB-EEB2A76E225E} = {2AEB1CBC-DA7F-45ED-BF33-4DD1EE1BCD6A}
+		{6EE979BB-B1E5-42AC-A53C-806F4431BE96} = {321FAEE6-5FFE-4101-94FB-EEB2A76E225E}
+		{ADB996E1-0208-4432-9ADF-160273EAF731} = {321FAEE6-5FFE-4101-94FB-EEB2A76E225E}
+		{8C8BCA34-6132-4B53-89CB-D17F7CD0B14B} = {321FAEE6-5FFE-4101-94FB-EEB2A76E225E}
+		{BFB7CA9F-D3E9-4654-BC9D-CA2761471C27} = {2AEB1CBC-DA7F-45ED-BF33-4DD1EE1BCD6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F22BD3A-76FB-4D91-8CF6-C41FB36B2F0E}

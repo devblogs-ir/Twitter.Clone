@@ -23,12 +23,18 @@ public class NotificationService : Notification.NotificationBase
 
         return Task.FromResult(new GetUserNotificationSettingsReply
         {
-            IsEmailActive = emailSettings!.IsActive!,
-            IsMentionActive = emailSettings.IsMentionActive,
-            IsDirectMessageActive = emailSettings.IsDirectMessageActive,
-            IsFollowActive = emailSettings.IsFollowActive,
-            IsSmsActive = smsSettings!.IsActive,
-            IsPasswordChangeActive = smsSettings.IsPasswordChangeActive
+            Email = new EmailNotificationSettingsReply
+            {
+                IsActive = emailSettings.IsActive,
+                IsDirectMessageActive = emailSettings.IsDirectMessageActive,
+                IsFollowActive = emailSettings.IsFollowActive,
+                IsMentionActive = emailSettings.IsMentionActive
+            },
+            Sms = new SmsNotificationSettingsReply
+            {
+                IsActive = smsSettings.IsActive,
+                IsPasswordChangeActive = smsSettings.IsPasswordChangeActive,
+            }
         });
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Twitter.Clone.Settings.Entities.Models;
+namespace Twitter.Clone.Settings.Entities;
 
 public abstract class NotificationSetting
 {

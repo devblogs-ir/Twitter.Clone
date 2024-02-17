@@ -1,16 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Twitter.Clone.Settings.Entities.Models;
+using Twitter.Clone.Settings.Entities;
 
 namespace Twitter.Clone.Settings.Context;
 
-public class SettingsDbContext : DbContext
+public class SettingsDbContext(DbContextOptions<SettingsDbContext> options) : DbContext(options)
 {
-    public SettingsDbContext(DbContextOptions<SettingsDbContext> options)
-        : base(options)
-    {
-
-    }
-
     #region BlockedList
     public DbSet<BlockedListSetting> BlockedListSettings { get; set; }
     public DbSet<BlockedUser> BlockedUsers { get; set; }

@@ -61,7 +61,7 @@ namespace Twitter.Clone.Settings.Migrations
                     b.Property<Guid>("BlockedPageId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.ToTable("BlockedPages");
+                    b.ToTable("BlockedPages", (string)null);
                 });
 
             modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.BlockedUser", b =>
@@ -71,7 +71,7 @@ namespace Twitter.Clone.Settings.Migrations
                     b.Property<Guid>("BlockedUserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.ToTable("BlockedUsers");
+                    b.ToTable("BlockedUsers", (string)null);
                 });
 
             modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.EmailNotificationSetting", b =>
@@ -87,7 +87,7 @@ namespace Twitter.Clone.Settings.Migrations
                     b.Property<bool>("IsMentionActive")
                         .HasColumnType("bit");
 
-                    b.ToTable("EmailNotificationSettings");
+                    b.ToTable("EmailNotificationSettings", (string)null);
                 });
 
             modelBuilder.Entity("Twitter.Clone.Settings.Entities.Models.SmsNotificationSetting", b =>
@@ -97,7 +97,7 @@ namespace Twitter.Clone.Settings.Migrations
                     b.Property<bool>("IsPasswordChangeActive")
                         .HasColumnType("bit");
 
-                    b.ToTable("SmsNotificationSettings");
+                    b.ToTable("SmsNotificationSettings", (string)null);
                 });
 #pragma warning restore 612, 618
         }

@@ -1,6 +1,6 @@
 ﻿using Grpc.Core;
 using Twitter.Clone.Settings.Context;
-using Twitter.Clone.Settings.Entities.Builders;
+using Twitter.Clone.Settings.Entities.Models;
 
 namespace Twitter.Clone.Settings.Services;
 
@@ -17,22 +17,19 @@ public class NotificationService : Notification.NotificationBase
         GetUserNotificationSettingsRequest request,
         ServerCallContext context)
     {
-        var response = new NotificationSettingsBuilder().
-            WithEmailSettings(_dbContext.EmailNotificationSettings.
-            Find(request.UserId)!).
-            WithSmsSettings(_dbContext.SmsNotificationSettings
-            .Find(request.UserId)!)
-            .Build();
-
+        var emailSettings = _dbContext.EmailNotificationSettings.
+            SingleOrDefault(p => p.UserId.ToString() == request.UserId)!;
+        var smsSettings = _dbContext.SmsNotificationSettings.
+            SingleOrDefault(p => p.UserId.ToString() == request.UserId)!;
 
         return Task.FromResult(new GetUserNotificationSettingsReply
         {
-            IsEmailActive = response.EmailNotificationSetting!.IsActive!,
-            IsMentionActive = response.EmailNotificationSetting.IsMentionActive,
-            IsDirectMessageActive = response.EmailNotificationSetting.IsDirectMessageActive,
-            IsFollowActive = response.EmailNotificationSetting.IsFollowActive,
-            IsSmsActive = response.SmsNotificationSetting!.IsActive,
-            IsPasswordChangeActive = response.SmsNotificationSetting.IsPasswordChangeActive
+            IsEmailActive = emailSettings!.IsActive!,
+            IsMentionActive = emailSettings.IsMentionActive,
+            IsDirectMessageActive = emailSettings.IsDirectMessageActive,
+            IsFollowActive = emailSettings.IsFollowActive,
+            IsSmsActive = smsSettings!.IsActive,
+            IsPasswordChangeActive = smsSettings.IsPasswordChangeActive
         });
     }
 }

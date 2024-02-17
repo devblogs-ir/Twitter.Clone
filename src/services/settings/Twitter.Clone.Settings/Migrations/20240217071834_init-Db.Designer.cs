@@ -12,7 +12,7 @@ using Twitter.Clone.Settings.Context;
 namespace Twitter.Clone.Settings.Migrations
 {
     [DbContext(typeof(SettingsDbContext))]
-    [Migration("20240215105615_init-Db")]
+    [Migration("20240217071834_init-Db")]
     partial class initDb
     {
         /// <inheritdoc />

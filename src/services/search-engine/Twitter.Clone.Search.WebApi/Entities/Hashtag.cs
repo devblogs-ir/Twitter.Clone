@@ -2,10 +2,10 @@
 
 public class Hashtag
 {
-    public Guid Id { get; set; }
-    public string Title { get; set; }
+    public Guid Id { get; init; }
+    public string Title { get; init; }
 
-    public List<TweetHashtag> TweetHashtags { get; set; } = [];
-    public List<Tweet> Tweets { get; set; } = [] ;
+    public List<TweetHashtag> TweetHashtags { get; } = [];
+    public List<Tweet> Tweets { get; } = [] ;
 
 }

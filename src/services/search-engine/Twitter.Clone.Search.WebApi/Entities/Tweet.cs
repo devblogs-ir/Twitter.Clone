@@ -2,15 +2,15 @@
 
 public class Tweet
 {
-    public Guid Id { get; set; }
-    public Guid UserId { get; set; }
+    public Guid Id { get; init; }
+    public Guid UserId { get; init; }
 
-    public string Content { get; set; }
-    public int LikeCount { get; set; }
-    public DateTime CreationDate { get; set; }
-    public int RetweetCount { get; set; }
+    public string Content { get; init; }
+    public int LikeCount { get; init; }
+    public DateTime CreationDate { get; init; }
+    public int RetweetCount { get; init; }
 
-    public List<TweetHashtag> TweetHashtags { get; set; } = [];
-    public List<Hashtag> Hashtags { get; set; } = [];
+    public List<TweetHashtag> TweetHashtags { get;  } = [];
+    public List<Hashtag> Hashtags { get; } = [];
 
 }

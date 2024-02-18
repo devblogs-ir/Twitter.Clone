@@ -1,5 +1,5 @@
-using Twitter.Clone.Search.WebApi;
 using Twitter.Clone.Search.WebApi.Context;
+using Twitter.Clone.Search.WebApi.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.RegisterServices();
+builder.Services.RegisterApplicationServices()
+                 .RegisterInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 

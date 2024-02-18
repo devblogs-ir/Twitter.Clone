@@ -2,9 +2,9 @@
 
 public class TweetHashtag
 {
-    public Guid TweetId { get; set; }
+    public Guid TweetId { get; init; }
     public Tweet Tweet { get; set; } = null!;
 
-    public Guid HashtagId { get; set; }
+    public Guid HashtagId { get; init; }
     public Hashtag Hashtag { get; set; } = null!;
 }

@@ -13,6 +13,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.IntegrationTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.FunctionalTests", "tests\Twitter.Clone.FunctionalTests\Twitter.Clone.FunctionalTests.csproj", "{115B3944-B02B-4CF4-8335-7976DF431D92}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{B3255AC5-EB29-417B-9D8E-BECDD53D4A63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{9DBBCE4B-875E-4988-8EA0-1B5D48E7E15F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Media.Api", "src\services\media\Twitter.Clone.Media.Api\Twitter.Clone.Media.Api.csproj", "{651738F8-8CF3-4975-8C43-2D30D3E4786D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Media.Application", "src\services\media\Twitter.Clone.Media.Application\Twitter.Clone.Media.Application.csproj", "{12E15136-6295-4282-B9B1-280A14F41870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Media.Domain", "src\services\media\Twitter.Clone.Media.Domain\Twitter.Clone.Media.Domain.csproj", "{E5D7C1B6-4187-42EB-BEDC-D03333D13717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Media.Infrastructure", "src\services\media\Twitter.Clone.Media.Infrastructure\Twitter.Clone.Media.Infrastructure.csproj", "{569B6051-732B-46EA-80C4-C10C7AE60EDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +43,22 @@ Global
 		{115B3944-B02B-4CF4-8335-7976DF431D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{115B3944-B02B-4CF4-8335-7976DF431D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{115B3944-B02B-4CF4-8335-7976DF431D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651738F8-8CF3-4975-8C43-2D30D3E4786D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651738F8-8CF3-4975-8C43-2D30D3E4786D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651738F8-8CF3-4975-8C43-2D30D3E4786D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651738F8-8CF3-4975-8C43-2D30D3E4786D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E15136-6295-4282-B9B1-280A14F41870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E15136-6295-4282-B9B1-280A14F41870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E15136-6295-4282-B9B1-280A14F41870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E15136-6295-4282-B9B1-280A14F41870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5D7C1B6-4187-42EB-BEDC-D03333D13717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D7C1B6-4187-42EB-BEDC-D03333D13717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5D7C1B6-4187-42EB-BEDC-D03333D13717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5D7C1B6-4187-42EB-BEDC-D03333D13717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{569B6051-732B-46EA-80C4-C10C7AE60EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{569B6051-732B-46EA-80C4-C10C7AE60EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{569B6051-732B-46EA-80C4-C10C7AE60EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{569B6051-732B-46EA-80C4-C10C7AE60EDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +67,11 @@ Global
 		{8B7038D5-583B-4348-894F-FA4FE47A933E} = {9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}
 		{01CE2511-0D00-4D6F-8EF6-094ED24AE7F0} = {9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}
 		{115B3944-B02B-4CF4-8335-7976DF431D92} = {9149AC9A-9A4C-43D9-A5A8-1FF1274B6594}
+		{B3255AC5-EB29-417B-9D8E-BECDD53D4A63} = {C5172DED-23A1-480D-9898-CAF450ED1CAA}
+		{9DBBCE4B-875E-4988-8EA0-1B5D48E7E15F} = {B3255AC5-EB29-417B-9D8E-BECDD53D4A63}
+		{651738F8-8CF3-4975-8C43-2D30D3E4786D} = {9DBBCE4B-875E-4988-8EA0-1B5D48E7E15F}
+		{12E15136-6295-4282-B9B1-280A14F41870} = {9DBBCE4B-875E-4988-8EA0-1B5D48E7E15F}
+		{E5D7C1B6-4187-42EB-BEDC-D03333D13717} = {9DBBCE4B-875E-4988-8EA0-1B5D48E7E15F}
+		{569B6051-732B-46EA-80C4-C10C7AE60EDD} = {9DBBCE4B-875E-4988-8EA0-1B5D48E7E15F}
 	EndGlobalSection
 EndGlobal

@@ -12,4 +12,13 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Data\" />
+      <Folder Include="Domain\" />
+      <Folder Include="Features\GroupMessage\" />
+      <Folder Include="Features\PrivateMessage\" />
+      <Folder Include="ServiceManager\" />
+      <Folder Include="Shared\" />
+    </ItemGroup>
+
 </Project>

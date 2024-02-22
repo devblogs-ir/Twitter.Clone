@@ -28,4 +28,8 @@
     <Folder Include="Persistence\Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Twitter.Clone.Locator.Contracts\Twitter.Clone.Locator.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

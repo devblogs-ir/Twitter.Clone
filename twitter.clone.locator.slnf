@@ -2,6 +2,7 @@
   "solution": {
     "path": "Twitter.Clone.sln",
     "projects": [
+      "src\\services\\locator\\Twitter.Clone.Locator.Contracts\\Twitter.Clone.Locator.Contracts.csproj",
       "src\\services\\locator\\Twitter.Clone.Locator\\Twitter.Clone.Locator.csproj",
       "tests\\Twitter.Clone.FunctionalTests\\Twitter.Clone.FunctionalTests.csproj",
       "tests\\Twitter.Clone.IntegrationTests\\Twitter.Clone.IntegrationTests.csproj",

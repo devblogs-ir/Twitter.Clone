@@ -20,7 +20,11 @@ public class LocatorDbContext : DbContext
         {
             builder.ToTable(name: Location.TableName, schema: DefaultSchema);
 
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => x.IP);
+            builder.Property(x => x.IP)
+                   .IsRequired()
+                   .HasMaxLength(45)
+                   .IsUnicode(false);
 
             builder.Property(x => x.Latitude).IsRequired();
             builder.Property(x => x.Longitude).IsRequired();

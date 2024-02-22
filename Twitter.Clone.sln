@@ -18,9 +18,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{E888FE00-A5C3-4A6B-8F88-B75CB1C41F6B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "locator", "locator", "{54CFD373-566B-4C49-ABF5-6F14369A00F1}"
-	ProjectSection(SolutionItems) = preProject
-		src\services\locator\Twitter.Clone.Locator.Contracts\Twitter.Clone.Locator.Contracts.csproj = src\services\locator\Twitter.Clone.Locator.Contracts\Twitter.Clone.Locator.Contracts.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "trends", "trends", "{C4099A92-6560-44C1-BD68-520D8D1EC7F3}"
 EndProject

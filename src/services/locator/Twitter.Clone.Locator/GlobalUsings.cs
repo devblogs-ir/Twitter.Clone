@@ -12,4 +12,5 @@ global using Mapster;
 global using Twitter.Clone.Locator.Features.LocationServices.Domain;
 global using Twitter.Clone.Locator.Persistence;
 global using Twitter.Clone.Locator.Extensions;
+global using Twitter.Clone.Locator.Contracts;
 global using Twitter.Clone.Locator.Features.LocationService;

@@ -1,4 +1,4 @@
-﻿namespace Twitter.Clone.Locator.Features.LocationService;
+﻿namespace Twitter.Clone.Locator.Contracts;
 
 public record class LocationResponse(
        double Latitude,

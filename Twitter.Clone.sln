@@ -19,9 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "trends", "trends", "{E80234
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Trends", "src\services\trends\Twitter.Clone.Trends\Twitter.Clone.Trends.csproj", "{94C6D20D-17D9-415E-B88D-986C596A88B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Locator", "src\services\locator\Twitter.Clone.Locator\Twitter.Clone.Locator.csproj", "{F1406CE9-DB51-4E86-9EAD-5E43E7F9F2C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Locator", "src\services\locator\Twitter.Clone.Locator\Twitter.Clone.Locator.csproj", "{F1406CE9-DB51-4E86-9EAD-5E43E7F9F2C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "locator", "locator", "{8610D3AB-F156-439A-9C3A-7514F492732E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{89D6AC75-16D3-4877-9C57-B029D3FD38AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Locator.Contracts", "src\services\locator\Twitter.Clone.Locator.Contracts\Twitter.Clone.Locator.Contracts.csproj", "{8EC3427A-80E8-4DD8-9D94-A4C18FED9D0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{F1406CE9-DB51-4E86-9EAD-5E43E7F9F2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1406CE9-DB51-4E86-9EAD-5E43E7F9F2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1406CE9-DB51-4E86-9EAD-5E43E7F9F2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC3427A-80E8-4DD8-9D94-A4C18FED9D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC3427A-80E8-4DD8-9D94-A4C18FED9D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC3427A-80E8-4DD8-9D94-A4C18FED9D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC3427A-80E8-4DD8-9D94-A4C18FED9D0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,8 @@ Global
 		{94C6D20D-17D9-415E-B88D-986C596A88B4} = {E80234F0-A870-4A5A-9380-3757A393A01F}
 		{F1406CE9-DB51-4E86-9EAD-5E43E7F9F2C9} = {8610D3AB-F156-439A-9C3A-7514F492732E}
 		{8610D3AB-F156-439A-9C3A-7514F492732E} = {E901A3A6-901F-4AF6-AB0E-79FCDBB73B02}
+		{89D6AC75-16D3-4877-9C57-B029D3FD38AF} = {C5172DED-23A1-480D-9898-CAF450ED1CAA}
+		{8EC3427A-80E8-4DD8-9D94-A4C18FED9D0F} = {8610D3AB-F156-439A-9C3A-7514F492732E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7606E4C9-00F8-43F8-A2C6-DF92F76AF055}

@@ -12,4 +12,31 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
+
+    public static IServiceCollection ConfigureLocatorServices(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddKeyedScoped<IGeoLocator, GeoLocatorDatabase>(GeoLocatorDatabase.LocatorName);
+        services.AddKeyedScoped<IGeoLocator, GeoLocatorApi>(GeoLocatorApi.LocatorName);
+        services.AddScoped<LocationFinder>();
+         
+        return services;
+    }
+
+    public static IServiceCollection ConfigureMapper(this IServiceCollection services)
+    {
+        var config = TypeAdapterConfig.GlobalSettings;
+        config.Scan(Assembly.GetExecutingAssembly());
+
+        services.AddSingleton(config);
+        services.AddScoped<IMapper, ServiceMapper>();
+        return services;
+    }
+
+    public static IServiceCollection ConfigureAppSettings(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.Configure<LocationServiceAppSettings>(
+             configuration.GetSection(LocationServiceAppSettings.SectionName));
+
+        return services;
+    }
 }

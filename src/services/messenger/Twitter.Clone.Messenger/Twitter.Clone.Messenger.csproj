@@ -9,16 +9,30 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+      <Compile Remove="Data\**" />
+      <Compile Remove="Domain\**" />
+      <Compile Remove="Features\**" />
+      <Compile Remove="ServiceManager\**" />
+      <Compile Remove="Shared\**" />
+      <Content Remove="Data\**" />
+      <Content Remove="Domain\**" />
+      <Content Remove="Features\**" />
+      <Content Remove="ServiceManager\**" />
+      <Content Remove="Shared\**" />
+      <EmbeddedResource Remove="Data\**" />
+      <EmbeddedResource Remove="Domain\**" />
+      <EmbeddedResource Remove="Features\**" />
+      <EmbeddedResource Remove="ServiceManager\**" />
+      <EmbeddedResource Remove="Shared\**" />
+      <None Remove="Data\**" />
+      <None Remove="Domain\**" />
+      <None Remove="Features\**" />
+      <None Remove="ServiceManager\**" />
+      <None Remove="Shared\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\" />
-      <Folder Include="Domain\" />
-      <Folder Include="Features\GroupMessage\" />
-      <Folder Include="Features\PrivateMessage\" />
-      <Folder Include="ServiceManager\" />
-      <Folder Include="Shared\" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
 </Project>

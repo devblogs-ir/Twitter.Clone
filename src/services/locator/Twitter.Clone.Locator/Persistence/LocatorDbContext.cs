@@ -3,6 +3,7 @@
 public class LocatorDbContext : DbContext
 {
     public const string DefaultSchema = "locator";
+    public const string ConnectionStringSectionName = "LocatorDb";
 
     public DbSet<Location> Locations => Set<Location>();
 

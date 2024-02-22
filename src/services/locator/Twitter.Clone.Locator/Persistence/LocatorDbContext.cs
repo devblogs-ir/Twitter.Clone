@@ -1,6 +1,4 @@
-﻿using Twitter.Clone.Locator.Domain;
-
-namespace Twitter.Clone.Locator.Persistence;
+﻿namespace Twitter.Clone.Locator.Persistence;
 
 public class LocatorDbContext : DbContext
 {

@@ -1,6 +1,6 @@
 @Twitter.Clone.Locator_HostAddress = http://localhost:5191
 
-GET {{Twitter.Clone.Locator_HostAddress}}/location/101.188.67.134
+GET {{Twitter.Clone.Locator_HostAddress}}/location/101.188.63.134
 Accept: application/json
 
 ###

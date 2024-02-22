@@ -6,8 +6,9 @@ public class GeoLocatorApi(IMapper mapper, IOptions<LocationServiceAppSettings> 
 
     public async Task<Location> GetAsync(string ipAddress, CancellationToken cancellationToken = default)
     {
+        var settings = locationServiceOptions.Value;
         var httpClient = new HttpClient();
-        var uri = new Uri($"https://api.ipgeolocation.io/ipgeo?apiKey={locationServiceOptions.Value.IPGeoApiKey}&ip={ipAddress}");
+        var uri = new Uri($"{settings.IPGeoBaseUrl}?apiKey={settings.IPGeoApiKey}&ip={ipAddress}");
 
         var locatorResponse = await httpClient.GetFromJsonAsync<GeoLocationResponse>(uri, cancellationToken);
 

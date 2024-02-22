@@ -2,6 +2,8 @@
 
 public class Location
 {
+    public const string TableName = "Locations";
+
     public int Id { get; set; }
 
     public double Latitude { get; set; } 

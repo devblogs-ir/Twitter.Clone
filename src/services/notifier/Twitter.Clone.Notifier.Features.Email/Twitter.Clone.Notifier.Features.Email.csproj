@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Twitter.Clone.Notifier.Share\Twitter.Clone.Notifier.Share.csproj" />
-  </ItemGroup>
-
 </Project>

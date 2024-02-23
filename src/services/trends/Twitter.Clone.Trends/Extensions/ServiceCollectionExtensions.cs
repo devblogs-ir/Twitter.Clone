@@ -1,5 +1,4 @@
-﻿
-namespace Twitter.Clone.Trends.Extensions;
+﻿namespace Twitter.Clone.Trends.Extensions;
 
 public static class ServiceCollectionExtensions
 {
@@ -14,6 +13,7 @@ public static class ServiceCollectionExtensions
         }
 
         services.AddMassTransit(configure => {
+
             configure.AddConsumers(typeof(Program).Assembly);
 
             configure.UsingRabbitMq((context, rabbitConfigure) => {

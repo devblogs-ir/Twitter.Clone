@@ -7,15 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Twitter.Clone.Notifier.Service\Twitter.Clone.Notifier.Service.csproj" />
+    <ProjectReference Include="..\Twitter.Clone.Notifier.Features.Email\Twitter.Clone.Notifier.Features.Email.csproj" />
+    <ProjectReference Include="..\Twitter.Clone.Notifier.Features.Sms\Twitter.Clone.Notifier.Features.Sms.csproj" />
   </ItemGroup>
 
 </Project>

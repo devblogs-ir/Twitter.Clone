@@ -41,7 +41,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Locator.Contr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{E529821D-D4D8-4088-93DE-6F2AE8E644BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.MessagingContracts", "src\shared\Twitter.Clone.MessagingContracts\Twitter.Clone.MessagingContracts.csproj", "{B5B3356C-1744-421E-BA68-2A651411A83C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.MessagingContracts", "src\shared\Twitter.Clone.MessagingContracts\Twitter.Clone.MessagingContracts.csproj", "{B5B3356C-1744-421E-BA68-2A651411A83C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "search-engine", "search-engine", "{FC099E44-2FD3-42DB-9BD2-83F6BEF251F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.SearchEngine", "src\services\search-engine\Twitter.Clone.SearchEngine\Twitter.Clone.SearchEngine.csproj", "{6B14D029-1A7F-47F0-A4ED-47FEDC5108AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +101,10 @@ Global
 		{B5B3356C-1744-421E-BA68-2A651411A83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B3356C-1744-421E-BA68-2A651411A83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B3356C-1744-421E-BA68-2A651411A83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B14D029-1A7F-47F0-A4ED-47FEDC5108AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B14D029-1A7F-47F0-A4ED-47FEDC5108AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B14D029-1A7F-47F0-A4ED-47FEDC5108AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B14D029-1A7F-47F0-A4ED-47FEDC5108AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +128,8 @@ Global
 		{8AB9EEAC-A45A-4A10-8B62-D5303E69C5FA} = {54CFD373-566B-4C49-ABF5-6F14369A00F1}
 		{E529821D-D4D8-4088-93DE-6F2AE8E644BE} = {C5172DED-23A1-480D-9898-CAF450ED1CAA}
 		{B5B3356C-1744-421E-BA68-2A651411A83C} = {E529821D-D4D8-4088-93DE-6F2AE8E644BE}
+		{FC099E44-2FD3-42DB-9BD2-83F6BEF251F5} = {E888FE00-A5C3-4A6B-8F88-B75CB1C41F6B}
+		{6B14D029-1A7F-47F0-A4ED-47FEDC5108AE} = {FC099E44-2FD3-42DB-9BD2-83F6BEF251F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F260845-3C2F-4011-B77A-D659EC34FF05}

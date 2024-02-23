@@ -1,5 +1,3 @@
-using Twitter.Clone.Locator.Features.LocationServices;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureServiceDbContext(builder.Configuration);

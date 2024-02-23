@@ -1,5 +1,4 @@
 ﻿using Grpc.Core;
-using Twitter.Clone.Settings.Business;
 using Twitter.Clone.Settings.Context;
 
 namespace Twitter.Clone.Settings.Services;
@@ -12,26 +11,30 @@ public class NotificationService : Notification.NotificationBase
     {
         _dbContext = dbContext;
     }
+
     public override Task<GetUserNotificationSettingsReply> GetUserNotificationSettings(
         GetUserNotificationSettingsRequest request,
         ServerCallContext context)
     {
-        UserNotificationResponse response = new()
-        {
-            EmailNotificationSetting = _dbContext.EmailNotificationSettings.
-            SingleOrDefault(p => p.UserId.ToString() == request.UserId)!,
-            SmsNotificationSetting = _dbContext.SmsNotificationSettings
-            .SingleOrDefault(p => p.UserId.ToString() == request.UserId)!,
-        };
+        var emailSettings = _dbContext.EmailNotificationSettings.
+            FirstOrDefault(p => p.UserId.ToString() == request.UserId)!;
+        var smsSettings = _dbContext.SmsNotificationSettings.
+            FirstOrDefault(p => p.UserId.ToString() == request.UserId)!;
 
         return Task.FromResult(new GetUserNotificationSettingsReply
         {
-            IsEmailActive = response.EmailNotificationSetting.IsActive,
-            IsMentionActive = response.EmailNotificationSetting.IsMentionActive,
-            IsDirectMessageActive = response.EmailNotificationSetting.IsDirectMessageActive,
-            IsFollowActive = response.EmailNotificationSetting.IsFollowActive,
-            IsSmsActive = response.SmsNotificationSetting.IsActive,
-            IsPasswordChangeActive = response.SmsNotificationSetting.IsPasswordChangeActive
+            Email = new EmailNotificationSettingsReply
+            {
+                IsActive = emailSettings.IsActive,
+                IsDirectMessageActive = emailSettings.IsDirectMessageActive,
+                IsFollowActive = emailSettings.IsFollowActive,
+                IsMentionActive = emailSettings.IsMentionActive
+            },
+            Sms = new SmsNotificationSettingsReply
+            {
+                IsActive = smsSettings.IsActive,
+                IsPasswordChangeActive = smsSettings.IsPasswordChangeActive,
+            }
         });
     }
 }

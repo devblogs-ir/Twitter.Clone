@@ -1,8 +1,9 @@
-﻿namespace Twitter.Clone.Settings.Entities;
+﻿using System.ComponentModel.DataAnnotations;
 
-public abstract class NotificationSetting
+namespace Twitter.Clone.Settings.Entities;
+
+public abstract class NotificationSetting : BaseEntity
 {
-    public Guid UserId { get; set; }
     public bool IsActive { get; set; }
 }
 

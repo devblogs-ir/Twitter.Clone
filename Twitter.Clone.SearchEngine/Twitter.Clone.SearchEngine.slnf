@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "path": "..\\Twitter.Clone.sln",
+    "projects": [
+      "Twitter.Clone.SearchEngine\\Twitter.Clone.SearchEngine.csproj",
+      "tests\\Twitter.Clone.FunctionalTests\\Twitter.Clone.FunctionalTests.csproj",
+      "tests\\Twitter.Clone.IntegrationTests\\Twitter.Clone.IntegrationTests.csproj",
+      "tests\\Twitter.Clone.UnitTests\\Twitter.Clone.UnitTests.csproj"
+    ]
+  }
+}

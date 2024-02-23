@@ -2,6 +2,17 @@
 
 public static class ServiceCollectionExtensions
 {
+    public static IServiceCollection ConfigureServiceDbContext(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddDbContext<TrendsDbContext>(options =>
+        {
+            var conStr = configuration.GetConnectionString(TrendsDbContext.ConnectionStringSectionName);
+            options.UseSqlServer(conStr);
+        });
+
+        return services;
+    }
+
     public static IServiceCollection ConfigureBrokerService(this IServiceCollection services, IConfiguration configuration)
     {
         var settings = configuration.GetSection(BrokerAppSettings.SectionName)

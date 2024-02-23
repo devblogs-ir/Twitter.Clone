@@ -40,6 +40,11 @@ public sealed class TrendsDbContext : DbContext
 
                     entry.Property(e => e.Processed).IsRequired();
 
+                    entry.Property(e => e.IPAddress)
+                         .IsRequired()
+                         .HasMaxLength(45)
+                         .IsUnicode(true);
+
                     entry.Property(e => e.CreatedOn)
                          .HasDefaultValueSql("GETDATE()")
                          .IsRequired();

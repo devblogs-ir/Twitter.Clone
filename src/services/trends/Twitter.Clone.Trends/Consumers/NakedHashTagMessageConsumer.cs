@@ -6,16 +6,14 @@ public class NakedHashTagMessageConsumer(TrendsDbContext trendDbContext) : ICons
     {
         if (context.Message is null) { return; }
 
-
-
-
-
-        var hashTag = new HashTag
+        var hashTag = await trendDbContext.HashTags.FindAsync(context.Message.Name, context.CancellationToken);
+        if (hashTag is null)
         {
-            Name = context.Message.Name,
-        };
+            hashTag = HashTag.Create(context.Message.Name);
+            await trendDbContext.HashTags.AddAsync(hashTag, context.CancellationToken);
+        }
 
-        await trendDbContext.HashTags.AddAsync(hashTag, context.CancellationToken);
+        hashTag.AddEntry(context.Message.OccurredOn, context.Message.IP);
         await trendDbContext.SaveChangesAsync(context.CancellationToken);
     }
 }

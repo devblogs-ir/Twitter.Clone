@@ -11,4 +11,6 @@ public class HashTagEntry
     public bool Processed { get; set; }
 
     public DateTime CreatedOn { get; set; }
+
+    public required string IPAddress { get; set; }
 }

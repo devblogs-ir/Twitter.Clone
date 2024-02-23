@@ -6,6 +6,15 @@ public class NakedHashTagMessageConsumer(TrendsDbContext trendDbContext) : ICons
     {
         if (context.Message is null) { return; }
 
-        await trendDbContext.HashTags.AddAsync(context.Message);
+        var hashTag = new HashTag
+        {
+            Name = context.Message.Name,
+            CreatedOn = DateTime.UtcNow,
+            Id = context.MessageId ?? Guid.NewGuid(),
+            Processed = false
+        };
+
+        await trendDbContext.HashTags.AddAsync(hashTag, context.CancellationToken);
+        await trendDbContext.SaveChangesAsync(context.CancellationToken);
     }
 }

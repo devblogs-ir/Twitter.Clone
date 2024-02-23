@@ -10,22 +10,18 @@
 
     <ItemGroup>
       <Compile Remove="Data\**" />
-      <Compile Remove="Domain\**" />
       <Compile Remove="Features\**" />
       <Compile Remove="ServiceManager\**" />
       <Compile Remove="Shared\**" />
       <Content Remove="Data\**" />
-      <Content Remove="Domain\**" />
       <Content Remove="Features\**" />
       <Content Remove="ServiceManager\**" />
       <Content Remove="Shared\**" />
       <EmbeddedResource Remove="Data\**" />
-      <EmbeddedResource Remove="Domain\**" />
       <EmbeddedResource Remove="Features\**" />
       <EmbeddedResource Remove="ServiceManager\**" />
       <EmbeddedResource Remove="Shared\**" />
       <None Remove="Data\**" />
-      <None Remove="Domain\**" />
       <None Remove="Features\**" />
       <None Remove="ServiceManager\**" />
       <None Remove="Shared\**" />

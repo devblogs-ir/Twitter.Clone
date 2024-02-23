@@ -1,6 +1,4 @@
-﻿using Twitter.Clone.Trends.Models.Entities;
-
-namespace Twitter.Clone.Trends.Persistence;
+﻿namespace Twitter.Clone.Trends.Persistence;
 
 public sealed class TrendsDbContext : DbContext
 {
@@ -19,22 +17,38 @@ public sealed class TrendsDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<HashTag>(builder =>
+        modelBuilder.Entity<HashTag>(tagBuilder =>
         {
-            builder.ToTable(name: HashTag.TableName, schema: DefaultSchema);
+            tagBuilder.ToTable(name: HashTag.TableName, schema: DefaultSchema);
 
-            builder.HasKey(x => x.Id);
+            tagBuilder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Processed).IsRequired();
+            tagBuilder.Property(x => x.Name)
+                      .HasMaxLength(40)
+                      .IsUnicode(true)
+                      .IsRequired();
 
-            builder.Property(x => x.Name)
-                   .HasMaxLength(40)
-                   .IsUnicode(true)
-                   .IsRequired();
+            tagBuilder.HasIndex(x => x.Name)
+                      .IsUnique()
+                      .IsClustered(false);
 
-            builder.Property(x => x.CreatedOn)
-                    .HasDefaultValueSql("GETDATE()")
-                    .IsRequired();
+            tagBuilder.OwnsMany(x => x.Entries, 
+                entry => 
+                {
+                    entry.ToTable(name: HashTagEntry.TableName, schema: DefaultSchema);
+                    entry.WithOwner().HasForeignKey(tag => tag.HashTagId);
+
+                    entry.Property(e => e.Processed).IsRequired();
+
+                    entry.Property(e => e.IPAddress)
+                         .IsRequired()
+                         .HasMaxLength(45)
+                         .IsUnicode(true);
+
+                    entry.Property(e => e.CreatedOn)
+                         .HasDefaultValueSql("GETDATE()")
+                         .IsRequired();
+                });
         });
     }
 }

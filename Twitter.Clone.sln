@@ -59,6 +59,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Notifier.Host
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Clone.Notifier.Common", "src\services\notifier\Twitter.Clone.Notifier.Common\Twitter.Clone.Notifier.Common.csproj", "{E90608C8-574B-4C5D-8B96-CF9987A84793}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "settings", "settings", "{BBB36D62-1BD3-4619-A984-794C9773D280}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Clone.Settings", "src\services\settings\Twitter.Clone.Settings\Twitter.Clone.Settings.csproj", "{A6E2F0D1-BB69-40D4-A2F8-F706D7B9DF48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +137,10 @@ Global
 		{E90608C8-574B-4C5D-8B96-CF9987A84793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E90608C8-574B-4C5D-8B96-CF9987A84793}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E90608C8-574B-4C5D-8B96-CF9987A84793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E2F0D1-BB69-40D4-A2F8-F706D7B9DF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E2F0D1-BB69-40D4-A2F8-F706D7B9DF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E2F0D1-BB69-40D4-A2F8-F706D7B9DF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E2F0D1-BB69-40D4-A2F8-F706D7B9DF48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +172,8 @@ Global
 		{4DCD80EC-7D70-4EC6-9606-47EC48F463EE} = {1B599A54-B382-4DCA-A44E-45E1B6983E07}
 		{A37BC1A1-758A-4A04-A91A-F448FD80BFBE} = {7AEABD09-9B35-4253-A3B5-2D4C3520B678}
 		{E90608C8-574B-4C5D-8B96-CF9987A84793} = {7AEABD09-9B35-4253-A3B5-2D4C3520B678}
+		{BBB36D62-1BD3-4619-A984-794C9773D280} = {E888FE00-A5C3-4A6B-8F88-B75CB1C41F6B}
+		{A6E2F0D1-BB69-40D4-A2F8-F706D7B9DF48} = {BBB36D62-1BD3-4619-A984-794C9773D280}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BD76B1D-5216-4E7A-B59F-B3980CCF7D08}

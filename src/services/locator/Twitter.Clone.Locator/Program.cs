@@ -7,7 +7,7 @@ builder.Services.ConfigureAppSettings(builder.Configuration);
 
 var app = builder.Build();
 
-app.MapGet("/location/{ip:required}", 
+app.MapGet("/locations/{ip:required}", 
     (LocationFinder locationFinder,string ip, CancellationToken cancellationToken) =>
         locationFinder.GetAsync(ip, cancellationToken));
 

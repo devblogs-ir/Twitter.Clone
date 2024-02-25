@@ -7,6 +7,7 @@ using Twitter.Clone.Tweet.WebApi;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container. 
+builder.Services.ConfigureBrokerService(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.RegisterApplicationServices();

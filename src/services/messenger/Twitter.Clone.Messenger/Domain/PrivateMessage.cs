@@ -13,6 +13,6 @@ namespace Twitter.Clone.Messenger.Models
         public DateTime DeliverDateTime { get; set; }
         public bool IsEdited { get; set; }
         public Guid PrivateChatId { get; set; }
-        public virtual PrivateChat PrivateChat { get; set; }
+        public required virtual PrivateChat PrivateChat { get; set; }
     }
 }

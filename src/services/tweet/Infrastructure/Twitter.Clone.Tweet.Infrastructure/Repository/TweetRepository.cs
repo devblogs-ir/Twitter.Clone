@@ -14,8 +14,8 @@ public class TweetRepository : ITweetRepository
  
     public TweetRepository(IOptions<MongoDbConfigurationModel> mongoDBSettings)
     { 
-        var _mongoDbClien = new MongoClient(mongoDBSettings.Value.ConnectionString);
-        var _database = _mongoDbClien.GetDatabase(mongoDBSettings.Value.DatabaseName);
+        var _mongoDbClient = new MongoClient(mongoDBSettings.Value.ConnectionString);
+        var _database = _mongoDbClient.GetDatabase(mongoDBSettings.Value.DatabaseName);
         _tweetCollection = _database.GetCollection<TweetEntity>(mongoDBSettings.Value.CollectionName);
     } 
 

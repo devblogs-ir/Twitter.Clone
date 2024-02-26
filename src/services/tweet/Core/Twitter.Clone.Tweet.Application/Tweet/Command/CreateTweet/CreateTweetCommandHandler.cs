@@ -22,10 +22,7 @@ public class CreateTweetCommandHandler(ITweetRepository tweetRepository, IValida
         var newentity = new TweetEntity(request.Text); 
         await _tweetRepository.CreateAsync(newentity);
         var composedMessage = new NakedComposedTweetMessage(
-            newentity.UserId, newentity.Text, newentity.ModifiedDate)
-        {
-            OccurredOn = newentity.CreatedDate
-        };
+            newentity.UserId, newentity.Text, newentity.CreatedDate, newentity.ModifiedDate);
 
         await bus.Publish(composedMessage);
         return newentity.Id;

@@ -2,7 +2,6 @@
 namespace Twitter.Clone.Tweet.Infrastructure.Repository;
 
 using Twitter.Clone.Tweet.Application.Contracts.Repository;
-using Twitter.Clone.Tweet.Infrastructure.Models;
 using Twitter.Clone.Tweet.Domain.Entities;
 using Microsoft.Extensions.Options; 
 using MongoDB.Driver;
@@ -12,7 +11,7 @@ public class TweetRepository : ITweetRepository
 {
     private readonly IMongoCollection<TweetEntity> _tweetCollection;
  
-    public TweetRepository(IOptions<MongoDbConfigurationModel> mongoDBSettings)
+    public TweetRepository(IOptions<MongoDbAppSettings> mongoDBSettings)
     { 
         var _mongoDbClient = new MongoClient(mongoDBSettings.Value.ConnectionString);
         var _database = _mongoDbClient.GetDatabase(mongoDBSettings.Value.DatabaseName);

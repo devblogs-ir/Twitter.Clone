@@ -5,5 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Twitter.Clone.Tweet.Domain\Twitter.Clone.Tweet.Domain.csproj" />
+  </ItemGroup>
+   
+  <ItemGroup> 
+    <PackageReference Include="FluentValidation" Version="11.9.0" /> 
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
 
 </Project>

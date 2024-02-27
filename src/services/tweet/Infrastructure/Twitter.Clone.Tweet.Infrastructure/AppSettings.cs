@@ -17,7 +17,7 @@ public sealed class BrokerAppSettings
 
 public class MongoDbAppSettings
 {
-    public const string SectionName = "MongoDbConfiguration";
+    public const string SectionName = "MongoDbConfigurations";
     public string? ConnectionString { get; set; }
     public string? DatabaseName { get; set; }
     public string? CollectionName { get; set; }

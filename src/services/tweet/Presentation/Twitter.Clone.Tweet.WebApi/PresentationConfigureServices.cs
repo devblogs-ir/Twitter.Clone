@@ -12,8 +12,6 @@ public static class PresentationConfigureServices
         var settings = configuration.GetSection(BrokerAppSettings.SectionName).Get<BrokerAppSettings>();
         services.AddMassTransit(configure =>
         {
-            configure.AddConsumers(typeof(Program).Assembly);
-
             configure.UsingRabbitMq((context, rabbitConfigure) => {
 
                 rabbitConfigure.Host(host: settings.Host, configureHost =>

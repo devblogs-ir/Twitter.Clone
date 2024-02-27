@@ -5,6 +5,9 @@ using Twitter.Clone.Tweet.Application.Contracts.Repository;
 using Twitter.Clone.Tweet.Domain.Entities;
 using FluentValidation;
 using MediatR;
+using Twitter.Clone.MessagingContracts.Tweet;
+using MassTransit;
+
 
 
 public class CreateTweetCommandHandler(ITweetRepository tweetRepository, IValidator<CreateTweetCommand> validator) : IRequestHandler<CreateTweetCommand, Guid>

@@ -1,0 +1,15 @@
+{
+  "solution": {
+    "path": "Twitter.Clone.sln",
+    "projects": [
+      "src\\services\\tweet\\Core\\Twitter.Clone.Tweet.Application\\Twitter.Clone.Tweet.Application.csproj",
+      "src\\services\\tweet\\Core\\Twitter.Clone.Tweet.Domain\\Twitter.Clone.Tweet.Domain.csproj",
+      "src\\services\\tweet\\Infrastructure\\Twitter.Clone.Tweet.Infrastructure\\Twitter.Clone.Tweet.Infrastructure.csproj",
+      "src\\services\\tweet\\Presentation\\Twitter.Clone.Tweet.WebApi\\Twitter.Clone.Tweet.WebApi.csproj",
+      "src\\shared\\Twitter.Clone.MessagingContracts\\Twitter.Clone.MessagingContracts.csproj",
+      "tests\\Twitter.Clone.FunctionalTests\\Twitter.Clone.FunctionalTests.csproj",
+      "tests\\Twitter.Clone.IntegrationTests\\Twitter.Clone.IntegrationTests.csproj",
+      "tests\\Twitter.Clone.UnitTests\\Twitter.Clone.UnitTests.csproj"
+    ]
+  }
+}

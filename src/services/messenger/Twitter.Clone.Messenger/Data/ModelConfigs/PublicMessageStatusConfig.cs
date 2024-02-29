@@ -1,6 +1,6 @@
-﻿using Twitter.Clone.Messenger.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Twitter.Clone.Messenger.Models;
 
 namespace Messanger.Data.Configs
 {
@@ -8,9 +8,9 @@ namespace Messanger.Data.Configs
     {
         public void Configure(EntityTypeBuilder<PublicMessageStatus> builder)
         {
-            builder.HasKey(s => s.PublicMessageStatusId);
-            builder.HasOne(s => s.PublicMessage).
-                WithMany(x => x.ParticipantStatus).HasForeignKey(x => x.PublicMessageId);
+            //builder.HasKey(s => s.PublicMessageStatusId);
+            //builder.HasOne(s => s.PublicMessage);
+            //WithMany(x => x.ParticipantStatus).HasForeignKey(x => x.PublicMessageId);
         }
     }
 }

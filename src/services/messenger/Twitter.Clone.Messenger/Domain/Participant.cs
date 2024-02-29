@@ -2,6 +2,7 @@
 {
     public class Participant
     {
+        public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public bool IsOwner { get; set; }
         public bool IsAdmin { get; set; }

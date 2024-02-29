@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Twitter.Clone.Messenger.Common.Behaviours;
 
+using Twitter.Clone.Messenger.ServiceManager;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MessengerDbContext>(o =>
@@ -22,6 +24,11 @@ builder.Services.AddMediatR(cfg =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddHttpClient();
+
+builder.Services.AddScoped<IServiceManager, ServiceManager>();
+
 
 var app = builder.Build();
 

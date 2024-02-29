@@ -14,7 +14,8 @@ namespace Messanger.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            string cs = $"Data Source={Environment.MachineName};Initial Catalog=MessengerDB;Persist Security Info=True;User ID=sa;Password=123;TrustServerCertificate=True";
+            //string cs = $"Data Source={Environment.MachineName};Initial Catalog=MessengerDB;Persist Security Info=True;User ID=sa;Password=123;TrustServerCertificate=True";
+            string cs = "Data Source=.\\MSSQLSERVER2019;Initial Catalog=MessengerDB;Persist Security Info=True;User ID=sa;Password=!QAZ2wsx;TrustServerCertificate=True";
             optionsBuilder.EnableSensitiveDataLogging(true);
             optionsBuilder.UseSqlServer(cs);
         }

@@ -6,8 +6,8 @@
         public bool IsOwner { get; set; }
         public bool IsAdmin { get; set; }
         public bool CanSendMessage { get; set; }
-        public string FirstName { get; set; }
+        public required string FirstName { get; set; }
         public bool LastName { get; set; }
-        public PublicChat PublicChat { get; set; }
+        public required PublicChat PublicChat { get; set; }
     }
 }

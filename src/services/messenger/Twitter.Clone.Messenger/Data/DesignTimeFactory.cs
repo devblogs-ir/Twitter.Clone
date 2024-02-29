@@ -8,7 +8,8 @@ namespace Messanger.Data
         public MessengerDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<MessengerDbContext>();
-            string cs = $"Data Source={Environment.MachineName};Initial Catalog=MessengerDB;Persist Security Info=True;User ID=sa;Password=123;TrustServerCertificate=True";
+            string cs = "Data Source=.\\MSSQLSERVER2019;Initial Catalog=MessengerDB;Persist Security Info=True;User ID=sa;Password=!QAZ2wsx;TrustServerCertificate=True";
+            
             optionsBuilder.UseSqlServer(cs);
             return new MessengerDbContext(optionsBuilder.Options);
         }

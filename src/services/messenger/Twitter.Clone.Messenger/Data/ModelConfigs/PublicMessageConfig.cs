@@ -13,7 +13,7 @@ namespace Messanger.Data.Configs
                 WithMany(x => x.PublicMessages).
                 HasForeignKey(x => x.ChatId);
 
-            builder.HasMany(x => x.Participants).WithOne(x => x.PublicMessage).
+            builder.HasMany(x => x.ParticipantStatus).WithOne(x => x.PublicMessage).
                 HasForeignKey(x=>x.PublicMessageId);
         }
     }

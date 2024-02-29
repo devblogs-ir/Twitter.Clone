@@ -1,6 +1,5 @@
-﻿using Twitter.Clone.Messenger.Models;
-using Messanger.Data.Configs;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Twitter.Clone.Messenger.Models;
 
 namespace Messanger.Data
 {
@@ -28,13 +27,8 @@ namespace Messanger.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ParticipantConfig());
-            modelBuilder.ApplyConfiguration(new PrivateChatConfig());
-            modelBuilder.ApplyConfiguration(new PrivateMessageConfig());
-            modelBuilder.ApplyConfiguration(new PublicChatConfig());
-            modelBuilder.ApplyConfiguration(new PublicChatConfig());
-            modelBuilder.ApplyConfiguration(new PublicMessageConfig());
-            modelBuilder.ApplyConfiguration(new PublicMessageStatusConfig());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MessengerDbContext).Assembly);
+
             OnModelCreatingPartial(modelBuilder);
         }
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

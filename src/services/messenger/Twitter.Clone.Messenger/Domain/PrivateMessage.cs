@@ -1,4 +1,4 @@
-﻿using Twitter.Clone.Messenger.Enums;
+﻿using Twitter.Clone.Messenger.Shared.Enums;
 
 namespace Twitter.Clone.Messenger.Models
 {

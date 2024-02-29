@@ -1,4 +1,4 @@
-﻿namespace Twitter.Clone.Messenger.Enums
+﻿namespace Twitter.Clone.Messenger.Shared.Enums
 {
     public enum MessageStatus : byte
     {

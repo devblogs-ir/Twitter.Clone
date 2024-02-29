@@ -2,12 +2,13 @@
 {
     public class PublicMessage
     {
-        public long PublicMessageId { get; set; }
+        public Guid Id { get; set; }
         public required string MessageBody { get; set; }
         public Guid MessageOwner { get; set; }
         public DateTime SentDateTime { get; set; }
         public bool IsEdited { get; set; }
-        public required ICollection<PublicMessageStatus> ParticipantStatus { get; set; }
+        public ICollection<PublicMessageStatus>? ParticipantStatus { get; set; }
+        public required ICollection<Participant> Participants { get; set; }
         public Guid ChatId { get; set; }
         public required PublicChat PublicChat { get; set; }
     }

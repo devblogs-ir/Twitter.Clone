@@ -5,23 +5,40 @@ namespace Twitter.Clone.Media.Api.Extensions;
 
 public static class ServiceRegisterationExtensions
 {
-    public static void AddMessageBroker(this IServiceCollection services, MessageBrokerLoginSettings messageBrokerLoginSetting, MessageBrokerSettings messageBrokerSettings)
+    public static void AddMessageBroker(this WebApplicationBuilder builder)
     {
+        var messageBrokerSettings = GetSettings<MessageBrokerSettings>(builder, MessageBrokerSettings.Section);
         var rabbitMqAddress = new Uri(messageBrokerSettings.Url);
 
-        services.AddMassTransit(configure =>
+        var messageBrokerLoginSettings = GetSettings<MessageBrokerLoginSettings>(builder, MessageBrokerLoginSettings.Section);
+
+        builder.Services.AddMassTransit(configure =>
         {
             // Consumer Registration
             configure.UsingRabbitMq((context, config) =>
             {
                 config.Host(rabbitMqAddress, "/", configure =>
                 {
-                    configure.Username(messageBrokerLoginSetting.Username);
-                    configure.Password(messageBrokerLoginSetting.Password);
+                    configure.Username(messageBrokerLoginSettings.Username);
+                    configure.Password(messageBrokerLoginSettings.Password);
                 });
 
                 config.ConfigureEndpoints(context);
             });
         });
+    }
+
+    private static TSettings GetSettings<TSettings>(WebApplicationBuilder builder, string section)
+    {
+        var messageBrokerLoginSettings = builder.Configuration
+                                                .GetSection(section)
+                                                .Get<TSettings>();
+
+        if (messageBrokerLoginSettings is null)
+        {
+            throw new ArgumentException($"{typeof(TSettings).FullName} not found!");
+        }
+
+        return messageBrokerLoginSettings;
     }
 }

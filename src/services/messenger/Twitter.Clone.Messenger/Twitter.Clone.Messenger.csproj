@@ -9,23 +9,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Remove="ServiceManager\**" />
-		<Compile Remove="Shared\**" />
-		<Content Remove="ServiceManager\**" />
-		<Content Remove="Shared\**" />
-		<EmbeddedResource Remove="ServiceManager\**" />
-		<EmbeddedResource Remove="Shared\**" />
-		<None Remove="ServiceManager\**" />
-		<None Remove="Shared\**" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="FluentValidation" Version="11.9.0" />
 		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
 		<PackageReference Include="MediatR" Version="12.2.0" />
-	<ItemGroup>
-	<ItemGroup>
-	<ItemGroup>
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2" />

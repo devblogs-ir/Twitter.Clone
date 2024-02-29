@@ -45,7 +45,7 @@ namespace Twitter.Clone.Messenger.Features.DirectMessages.Commands
                 IsDeletedForTarget = false,
                 IsForStarter = request.StarterUserId == privateChat.StarterUserId,
                 MessageBody = request.MessageBody,
-                MessageStatus = Enums.MessageStatus.Draft,
+                MessageStatus = Shared.Enums.MessageStatus.Draft,
                 PrivateChatId = privateChat.ChatId,
                 PrivateChat = privateChat //چرا باید حتما اینو مقداردهی کنیم؟
             };

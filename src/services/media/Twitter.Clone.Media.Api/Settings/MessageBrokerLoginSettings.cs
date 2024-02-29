@@ -1,6 +1,6 @@
-﻿namespace Twitter.Clone.Media.Api.Configurations;
+﻿namespace Twitter.Clone.Media.Api.Settings;
 
-public class MessageBrokerLoginSettings
+public sealed class MessageBrokerLoginSettings
 {
     public const string Section = "Secrets:MessageBroker";
     public required string Username { get; set; }

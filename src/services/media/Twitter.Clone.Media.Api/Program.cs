@@ -1,19 +1,29 @@
-using Twitter.Clone.Media.Api.Configurations;
 using Twitter.Clone.Media.Api.Extensions;
+using Twitter.Clone.Media.Api.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var messageBrokerLoginSetting = builder.Configuration
-                                       .GetSection(MessageBrokerLoginSettings.Section)
-                                       .Get<MessageBrokerLoginSettings>();
-if (messageBrokerLoginSetting is null)
+var messageBrokerLoginSettings = builder.Configuration
+                                        .GetSection(MessageBrokerLoginSettings.Section)
+                                        .Get<MessageBrokerLoginSettings>();
+
+var messageBrokerSettings = builder.Configuration
+                                   .GetSection(MessageBrokerSettings.Section)
+                                   .Get<MessageBrokerSettings>();
+
+if (messageBrokerLoginSettings is null)
 {
     throw new ArgumentException("Message Broker Credentials not found! Please add them via user-secrets!");
 }
 
-builder.Services.AddMessageBroker(messageBrokerLoginSetting);
+if (messageBrokerSettings is null)
+{
+    throw new ArgumentException("Message Broker Settings not found!");
+}
+
+builder.Services.AddMessageBroker(messageBrokerLoginSettings, messageBrokerSettings);
 
 var app = builder.Build();
 

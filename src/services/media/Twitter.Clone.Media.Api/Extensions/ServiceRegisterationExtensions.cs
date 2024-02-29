@@ -1,13 +1,13 @@
 ﻿using MassTransit;
-using Twitter.Clone.Media.Api.Configurations;
+using Twitter.Clone.Media.Api.Settings;
 
 namespace Twitter.Clone.Media.Api.Extensions;
 
 public static class ServiceRegisterationExtensions
 {
-    public static void AddMessageBroker(this IServiceCollection services, MessageBrokerLoginSettings messageBrokerLoginSetting)
+    public static void AddMessageBroker(this IServiceCollection services, MessageBrokerLoginSettings messageBrokerLoginSetting, MessageBrokerSettings messageBrokerSettings)
     {
-        var rabbitMqAddress = new Uri("amqp://localhost:5672");
+        var rabbitMqAddress = new Uri(messageBrokerSettings.Url);
 
         services.AddMassTransit(configure =>
         {

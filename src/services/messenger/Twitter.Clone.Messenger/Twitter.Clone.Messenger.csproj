@@ -21,6 +21,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Features\DirectMessages\Queries\" />
+	  <Folder Include="Features\GetUnreadMessage\Controllers\" />
 	</ItemGroup>
 
 </Project>

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Twitter.Clone.Messenger.Migrations
 {
     [DbContext(typeof(MessengerDbContext))]
-    [Migration("20240226183317_InitDB")]
-    partial class InitDB
+    [Migration("20240301162620_initMig")]
+    partial class initMig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,30 +31,20 @@ namespace Twitter.Clone.Messenger.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("CanSendMessage")
-                        .HasColumnType("bit");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<Guid?>("PublicChatChatId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("IsAdmin")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsOwner")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LastName")
-                        .HasMaxLength(20)
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("PublicChatChatId")
+                    b.Property<Guid>("PublicMessageId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("UserId");
 
                     b.HasIndex("PublicChatChatId");
+
+                    b.HasIndex("PublicMessageId");
 
                     b.ToTable("Participants");
                 });
@@ -170,11 +160,9 @@ namespace Twitter.Clone.Messenger.Migrations
 
             modelBuilder.Entity("Twitter.Clone.Messenger.Models.PublicMessage", b =>
                 {
-                    b.Property<long>("PublicMessageId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("PublicMessageId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ChatId")
                         .HasColumnType("uniqueidentifier");
@@ -192,7 +180,7 @@ namespace Twitter.Clone.Messenger.Migrations
                     b.Property<DateTime>("SentDateTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("PublicMessageId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ChatId");
 
@@ -213,8 +201,8 @@ namespace Twitter.Clone.Messenger.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<long>("PublicMessageId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("PublicMessageId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte>("SentMessageSatus")
                         .HasColumnType("tinyint");
@@ -233,7 +221,11 @@ namespace Twitter.Clone.Messenger.Migrations
                 {
                     b.HasOne("Twitter.Clone.Messenger.Models.PublicChat", "PublicChat")
                         .WithMany("Participants")
-                        .HasForeignKey("PublicChatChatId")
+                        .HasForeignKey("PublicChatChatId");
+
+                    b.HasOne("Twitter.Clone.Messenger.Models.PublicMessage", null)
+                        .WithMany("Participants")
+                        .HasForeignKey("PublicMessageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -288,6 +280,8 @@ namespace Twitter.Clone.Messenger.Migrations
             modelBuilder.Entity("Twitter.Clone.Messenger.Models.PublicMessage", b =>
                 {
                     b.Navigation("ParticipantStatus");
+
+                    b.Navigation("Participants");
                 });
 #pragma warning restore 612, 618
         }

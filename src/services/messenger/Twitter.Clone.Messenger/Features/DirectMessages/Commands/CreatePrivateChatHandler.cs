@@ -16,6 +16,8 @@ namespace Twitter.Clone.Messenger.Features.DirectMessages.Commands
             //(x.StarterUserId == request.TargetUserId && x.TargetUserId == request.StarterUserId)) && (!x.IsDeletedForStarter || !x.IsDeletedForTarget));
             //var p = new PrivateChat();
             //does it possible to use single method?
+            var aa =_dbContext.PrivateChats.FirstOrDefault();
+
             var privateChat = _dbContext.PrivateChats
                 .SingleOrDefault(x => ((x.StarterUserId == request.StarterUserId && x.TargetUserId == request.TargetUserId) ||
                             (x.StarterUserId == request.TargetUserId && x.TargetUserId == request.StarterUserId)) && 

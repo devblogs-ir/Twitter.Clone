@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Twitter.Clone.Messenger.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDB : Migration
+    public partial class initMig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -74,34 +74,10 @@ namespace Twitter.Clone.Messenger.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Participants",
-                columns: table => new
-                {
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IsOwner = table.Column<bool>(type: "bit", nullable: false),
-                    IsAdmin = table.Column<bool>(type: "bit", nullable: false),
-                    CanSendMessage = table.Column<bool>(type: "bit", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    LastName = table.Column<bool>(type: "bit", maxLength: 20, nullable: false),
-                    PublicChatChatId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Participants", x => x.UserId);
-                    table.ForeignKey(
-                        name: "FK_Participants_PublicChats_PublicChatChatId",
-                        column: x => x.PublicChatChatId,
-                        principalTable: "PublicChats",
-                        principalColumn: "ChatId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "PublicMessages",
                 columns: table => new
                 {
-                    PublicMessageId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MessageBody = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MessageOwner = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SentDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -110,7 +86,7 @@ namespace Twitter.Clone.Messenger.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PublicMessages", x => x.PublicMessageId);
+                    table.PrimaryKey("PK_PublicMessages", x => x.Id);
                     table.ForeignKey(
                         name: "FK_PublicMessages_PublicChats_ChatId",
                         column: x => x.ChatId,
@@ -120,12 +96,37 @@ namespace Twitter.Clone.Messenger.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Participants",
+                columns: table => new
+                {
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PublicMessageId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PublicChatChatId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Participants", x => x.UserId);
+                    table.ForeignKey(
+                        name: "FK_Participants_PublicChats_PublicChatChatId",
+                        column: x => x.PublicChatChatId,
+                        principalTable: "PublicChats",
+                        principalColumn: "ChatId");
+                    table.ForeignKey(
+                        name: "FK_Participants_PublicMessages_PublicMessageId",
+                        column: x => x.PublicMessageId,
+                        principalTable: "PublicMessages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PublicMessageStatus",
                 columns: table => new
                 {
                     PublicMessageStatusId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PublicMessageId = table.Column<long>(type: "bigint", nullable: false),
+                    PublicMessageId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SentMessageSatus = table.Column<byte>(type: "tinyint", nullable: false),
                     DeliverDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -138,7 +139,7 @@ namespace Twitter.Clone.Messenger.Migrations
                         name: "FK_PublicMessageStatus_PublicMessages_PublicMessageId",
                         column: x => x.PublicMessageId,
                         principalTable: "PublicMessages",
-                        principalColumn: "PublicMessageId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -148,19 +149,24 @@ namespace Twitter.Clone.Messenger.Migrations
                 column: "PublicChatChatId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Participants_PublicMessageId",
+                table: "Participants",
+                column: "PublicMessageId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PrivateMessages_PrivateChatId",
                 table: "PrivateMessages",
                 column: "PrivateChatId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PublicMessageStatus_PublicMessageId",
-                table: "PublicMessageStatus",
-                column: "PublicMessageId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_PublicMessages_ChatId",
                 table: "PublicMessages",
                 column: "ChatId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PublicMessageStatus_PublicMessageId",
+                table: "PublicMessageStatus",
+                column: "PublicMessageId");
         }
 
         /// <inheritdoc />

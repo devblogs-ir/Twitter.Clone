@@ -8,9 +8,11 @@ using Twitter.Clone.Messenger.Common.Behaviours;
 using Twitter.Clone.Messenger.ServiceManager;
 
 var builder = WebApplication.CreateBuilder(args);
+var connStr = builder.Configuration.GetConnectionString("MessengerDbContext");
+Console.WriteLine(connStr);
 
 builder.Services.AddDbContext<MessengerDbContext>(o =>
-    o.UseSqlServer(builder.Configuration.GetConnectionString("MessengerDbContext")));
+    o.UseSqlServer(connStr));
 
 
 var assembly = typeof(Program).Assembly;

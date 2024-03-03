@@ -1,38 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <InvariantGlobalization>true</InvariantGlobalization>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<InvariantGlobalization>false</InvariantGlobalization>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
 
-    <ItemGroup>
-      <Compile Remove="Data\**" />
-      <Compile Remove="Domain\**" />
-      <Compile Remove="Features\**" />
-      <Compile Remove="ServiceManager\**" />
-      <Compile Remove="Shared\**" />
-      <Content Remove="Data\**" />
-      <Content Remove="Domain\**" />
-      <Content Remove="Features\**" />
-      <Content Remove="ServiceManager\**" />
-      <Content Remove="Shared\**" />
-      <EmbeddedResource Remove="Data\**" />
-      <EmbeddedResource Remove="Domain\**" />
-      <EmbeddedResource Remove="Features\**" />
-      <EmbeddedResource Remove="ServiceManager\**" />
-      <EmbeddedResource Remove="Shared\**" />
-      <None Remove="Data\**" />
-      <None Remove="Domain\**" />
-      <None Remove="Features\**" />
-      <None Remove="ServiceManager\**" />
-      <None Remove="Shared\**" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="11.9.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+		<PackageReference Include="MediatR" Version="12.2.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2" />
+	</ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    </ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Features\UnreadMessage\Controllers\" />
+	</ItemGroup>
 
 </Project>

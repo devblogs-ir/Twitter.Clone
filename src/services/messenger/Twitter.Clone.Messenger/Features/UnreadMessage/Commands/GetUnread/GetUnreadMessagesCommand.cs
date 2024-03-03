@@ -2,11 +2,11 @@
 using Twitter.Clone.Messenger.Models;
 using Twitter.Clone.Messenger.Shared.Enums;
 
-namespace Twitter.Clone.Messenger.Features.GetUnreadMessage.Commands;
+namespace Twitter.Clone.Messenger.Features.UnreadMessage.Commands.GetUnread;
 
-public class GetUnreadMessagesCommand:IRequest<GetMessagesResponse>
+public class GetUnreadMessagesCommand : IRequest<IEnumerable<GetUnreadMessagesResponse>>
 {
-    public Guid UserId { get; set; }
+    public required string UserId { get; set; }
 }
 
 
@@ -22,14 +22,11 @@ public class GetUnreadMessagesCommand:IRequest<GetMessagesResponse>
 //public required virtual PrivateChat PrivateChat { get; set; }
 
 
-public class GetMessagesResponse
+
+public class GetUnreadMessagesResponse
 {
-    public required IEnumerable<GetMessagesSingleResponse> Messages { get; set; }
-}
-public class GetMessagesSingleResponse
-{
-    public long  PrivateMessageId{ get; set; }
-    public string? MessageBody { get; set; }
+    public long PrivateMessageId { get; set; }
+    public required string MessageBody { get; set; }
 }
 
 

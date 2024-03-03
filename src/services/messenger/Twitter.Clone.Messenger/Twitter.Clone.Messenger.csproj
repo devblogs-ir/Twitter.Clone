@@ -20,8 +20,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Features\DirectMessages\Queries\" />
-	  <Folder Include="Features\GetUnreadMessage\Controllers\" />
+	  <Folder Include="Features\UnreadMessage\Controllers\" />
 	</ItemGroup>
 
 </Project>

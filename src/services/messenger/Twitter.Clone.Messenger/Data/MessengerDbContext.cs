@@ -6,6 +6,10 @@ namespace Messanger.Data
 
     public partial class MessengerDbContext : DbContext
     {
+        public MessengerDbContext()
+        {
+            
+        }
         public MessengerDbContext(DbContextOptions options) : base(options)
         {
 
@@ -14,7 +18,6 @@ namespace Messanger.Data
         {
             base.OnConfiguring(optionsBuilder);
             string cs = $"Data Source={Environment.MachineName};Initial Catalog=MessengerDB;Persist Security Info=True;User ID=sa;Password=123;TrustServerCertificate=True";
-            optionsBuilder.EnableSensitiveDataLogging(true);
             optionsBuilder.UseSqlServer(cs);
         }
 

@@ -17,9 +17,4 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Features\RemoveUserFromPublicChat\Command\" />
-	  <Folder Include="Features\RemoveUserFromPublicChat\Handler\" />
-	</ItemGroup>
-
 </Project>

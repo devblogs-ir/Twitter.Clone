@@ -2,7 +2,7 @@
 
 namespace Twitter.Clone.Messenger.Features.DirectMessages.Commands
 {
-    public class CreatePrivateChat : IRequest<long>
+    public class CreatePrivateMessage : IRequest<long>
 
     {
         public Guid StarterUserId { get; set; }

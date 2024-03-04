@@ -8,7 +8,7 @@ namespace Twitter.Clone.Messenger.Features.DirectMessages.Controllers
     {
         [Route("Apiy/SendDirectMessage")]
         [HttpPost]
-        public async Task<ActionResult<long>> Create(CreatePrivateChat command)
+        public async Task<ActionResult<long>> Create(CreatePrivateMessage command)
        => await Mediator.Send(command);
     }
 }

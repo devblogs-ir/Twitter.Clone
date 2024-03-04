@@ -5,12 +5,12 @@ using Twitter.Clone.Messenger.Models;
 
 namespace Twitter.Clone.Messenger.Features.DirectMessages.Commands
 {
-    public class CreatePrivateChatHandler(MessengerDbContext dbContext) : 
-        IRequestHandler<CreatePrivateChat, long>
+    public class CreatePrivateMessageHandler(MessengerDbContext dbContext) : 
+        IRequestHandler<CreatePrivateMessage, long>
     {
         private  MessengerDbContext _dbContext { get; } = dbContext;
 
-        public async Task<long> Handle(CreatePrivateChat request, CancellationToken cancellationToken)
+        public async Task<long> Handle(CreatePrivateMessage request, CancellationToken cancellationToken)
         {
             //var ExistChat = _dbContext.PrivateChats.Any(x => ((x.StarterUserId == request.StarterUserId && x.TargetUserId == request.TargetUserId) ||
             //(x.StarterUserId == request.TargetUserId && x.TargetUserId == request.StarterUserId)) && (!x.IsDeletedForStarter || !x.IsDeletedForTarget));

@@ -2,9 +2,9 @@
 
 namespace Twitter.Clone.Messenger.Features.DirectMessages.Commands
 {
-    public class CreatePrivateChatValidator : AbstractValidator<CreatePrivateChat>
+    public class CreatePrivateMessageValidator : AbstractValidator<CreatePrivateMessage>
     {
-        public CreatePrivateChatValidator()
+        public CreatePrivateMessageValidator()
         {
             RuleFor(chat => chat.StarterUserId)
                 .NotEmpty().WithMessage("StarterUserId is required");

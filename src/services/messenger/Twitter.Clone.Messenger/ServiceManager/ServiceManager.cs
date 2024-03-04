@@ -1,4 +1,5 @@
 ﻿using Messanger.Data;
+using Twitter.Clone.Messenger.Features.DirectMessages.Services;
 using Twitter.Clone.Messenger.Features.PublicMessages;
 using Twitter.Clone.Messenger.Shared.SettingRequests;
 
@@ -23,6 +24,7 @@ namespace Twitter.Clone.Messenger.ServiceManager
         private readonly MessengerDbContext _context;
         private IPublicMessageService? _publicMessageService;
         private ISettingService? _settingService;
+        private IPrivateMessageService? _privateMessageService;
 
         public ServiceManager(MessengerDbContext context)
         {
@@ -48,6 +50,14 @@ namespace Twitter.Clone.Messenger.ServiceManager
                     _settingService = new SettingService();
 
                 return _settingService;
+            }
+        }
+
+        public IPrivateMessageService privateMessageService
+        {
+            get
+            {
+
             }
         }
 

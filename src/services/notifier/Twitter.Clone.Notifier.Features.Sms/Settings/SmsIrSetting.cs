@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Twitter.Clone.Notifier.Features.Sms.Settings
 {
-
-    public class FarapayamakSetting
+    public class SmsIrSetting
     {
-        public const string SectionName = "FarapayamakSetting";
+        public const string SectionName = "SmsIrSetting";
         public string ProviderName { get; set; }
         public string ApiUrl { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string SenderNumber { get; set; }
+        public string ApiKey { get; set; }
     }
 }

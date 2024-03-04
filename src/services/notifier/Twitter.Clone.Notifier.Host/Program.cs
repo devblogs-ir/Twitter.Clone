@@ -5,7 +5,7 @@ using Twitter.Clone.Notifier.Features.Sms.Contracts;
 using Twitter.Clone.Notifier.Features.Sms.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.Configure<FarapayamakSetting>(builder.Configuration.GetSection(FarapayamakSetting.SectionName));
+builder.Services.Configure<SmsProvidersSetting>(builder.Configuration.GetSection(SmsProvidersSetting.SectionName));
 builder.Host
     .UseServiceProviderFactory(new AutofacServiceProviderFactory())
     .ConfigureContainer<ContainerBuilder>((container) =>

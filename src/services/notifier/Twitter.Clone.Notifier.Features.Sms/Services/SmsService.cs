@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Twitter.Clone.Notifier.Common.ApiCaller;
 using Twitter.Clone.Notifier.Features.Sms.Contracts;
 using Twitter.Clone.Notifier.Features.Sms.Models;
 using Twitter.Clone.Notifier.Features.Sms.Settings;
@@ -20,10 +21,7 @@ namespace Twitter.Clone.Notifier.Features.Sms.Services
         }
         public async Task<bool> Send(string messageBody, string phoneNumber)
         {
-            var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://rest.payamak-panel.com/api/SmartSMS/Send");
-
-            var content1 = new FarapayamakRequestModel
+            var requestModel = new FarapayamakRequestModel
             {
                 text = messageBody,
                 password = _farapayamakOptions.Value.Password,
@@ -31,13 +29,9 @@ namespace Twitter.Clone.Notifier.Features.Sms.Services
                 from = _farapayamakOptions.Value.SenderNumber,
                 username = _farapayamakOptions.Value.UserName
             };
-            var test1 = JsonConvert.SerializeObject(content1);
-            var content = new StringContent(test1, null, "application/json");
-            request.Content = content;
-            var response = await client.SendAsync(request);
+            var response = await ApiCaller.PostAsync(_farapayamakOptions.Value.ApiUrl, requestModel);
             response.EnsureSuccessStatusCode();
-
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

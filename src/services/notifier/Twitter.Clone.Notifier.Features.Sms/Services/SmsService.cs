@@ -20,7 +20,6 @@ namespace Twitter.Clone.Notifier.Features.Sms.Services
         }
         public async Task<bool> Send(string messageBody, string phoneNumber)
         {
-            //
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://rest.payamak-panel.com/api/SmartSMS/Send");
 
@@ -33,14 +32,10 @@ namespace Twitter.Clone.Notifier.Features.Sms.Services
                 username = _farapayamakOptions.Value.UserName
             };
             var test1 = JsonConvert.SerializeObject(content1);
-            //var content = new StringContent("{\r\n    \"username\":\"babak88\",\r\n    \"password\":\"12wq!@WQ\",\r\n    \"to\":\"09148905828\",\r\n    \"text\":\"salam\",\r\n    \"from\":\"50002002822878\"\r\n}", null, "application/json");
             var content = new StringContent(test1, null, "application/json");
             request.Content = content;
             var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
-            Console.WriteLine(await response.Content.ReadAsStringAsync());
-
-
 
             throw new NotImplementedException();
         }

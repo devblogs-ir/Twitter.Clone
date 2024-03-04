@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Twitter.Clone.Notifier.Features.Email\Twitter.Clone.Notifier.Features.Email.csproj" />
     <ProjectReference Include="..\Twitter.Clone.Notifier.Features.Sms\Twitter.Clone.Notifier.Features.Sms.csproj" />
   </ItemGroup>

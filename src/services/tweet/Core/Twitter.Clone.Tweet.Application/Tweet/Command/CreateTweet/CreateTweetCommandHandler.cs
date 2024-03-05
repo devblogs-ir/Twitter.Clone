@@ -28,6 +28,39 @@ public class CreateTweetCommandHandler(ITweetRepository tweetRepository, IValida
             newentity.UserId, newentity.Text, newentity.CreatedDate, newentity.ModifiedDate);
 
         await bus.Publish(composedMessage);
+
+
+        #region Trend Event
+
+        var hashtags = new List<string> { "Iran", "Tehran", "Karaj", "Gilan", "gilan" };
+        //var ipAddress = "192.90.30.20";
+        //var ipAddress = HttpContext.Connection.RemoteIpAddress.ToString();
+
+        string ipAddress = await GetPublicIPAddressAsync();
+        var hashtagMessage = new WrapperHashTagMessage(hashtags, ipAddress);
+        await bus.Publish(hashtagMessage);
+
+        #endregion
+
+
         return newentity.Id;
     }
+    static async Task<string> GetPublicIPAddressAsync()
+    {
+        try
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync("https://api.ipify.org");
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadAsStringAsync();
+            }
+        }
+        catch (HttpRequestException)
+        {
+            // ?? ???? ???? ???? ????????? ??????? ????? ?? ???? ?????? ???? IP ?????? ????
+            return "Unable to retrieve IP address";
+        }
+    }
 }
+

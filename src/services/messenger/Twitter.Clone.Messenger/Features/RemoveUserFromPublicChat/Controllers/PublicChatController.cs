@@ -20,7 +20,7 @@ namespace Twitter.Clone.Messenger.Features.RemoveUserFromPublicChat.Controllers
         [HttpDelete]
         public async Task<ActionResult> RemoveUserFromChat(Guid userId, Guid chatId)
         {
-            var removeModel = new RemoveModelDTO() { ApplicationFeedBack = "", PublicChatId = chatId, UserId = userId };
+            var removeModel = new RemoveModelDTO() { ApplicationFeedBack = "", PublicChatId = chatId, IntendToRemoveUserId = userId };
             await _mediator.Send(new RemoveUserFromPublicChatCommand(removeModel));
             _logger.LogInformation(removeModel.ApplicationFeedBack);
             if (removeModel.OperationResult)

@@ -2,6 +2,7 @@
 using Messanger.Data;
 using Microsoft.EntityFrameworkCore;
 using Twitter.Clone.Messenger.Features.RemoveUserFromPublicChat.Command;
+using Twitter.Clone.Messenger.Features.RemoveUserFromPublicChat.Exceptions;
 using Twitter.Clone.Messenger.Models;
 
 namespace Twitter.Clone.Messenger.Features.RemoveUserFromPublicChat.Handler
@@ -20,34 +21,24 @@ namespace Twitter.Clone.Messenger.Features.RemoveUserFromPublicChat.Handler
                 FirstOrDefaultAsync(pc => pc.ChatId == request.ModelDTO.PublicChatId) ?? throw new NullReferenceException();
 
             var intendToRemoveParticipant = relatedPublicChat.Participants.
-                FirstOrDefault(x => x.UserId == request.ModelDTO.UserId) ??
+                FirstOrDefault(x => x.UserId == request.ModelDTO.IntendToRemoveUserId) ??
                 throw new UserIsNotMemberOfChatException();
 
             var removerParticipant = relatedPublicChat.Participants.
                 FirstOrDefault(x => x.UserId == GetCurrentUserId()) ??
                 throw new UserIsNotMemberOfChatException();
-
-            var canRemove = CanRemoveUserFromPublicChat(relatedPublicChat, removerParticipant, intendToRemoveParticipant);
-
-            if (canRemove)
+            try
             {
-                try
-                {
-                    relatedPublicChat.Participants.Remove(intendToRemoveParticipant);
-                    _db.SaveChanges();
-                    request.ModelDTO.OperationResult = true;
-                    request.ModelDTO.ApplicationFeedBack = "The User Successfully Removed .";
-                }
-                catch (Exception ex)
-                {
-                    request.ModelDTO.OperationResult = false;
-                    request.ModelDTO.ApplicationFeedBack = ex.Message;
-                }
+                CanRemoveUserFromPublicChat(relatedPublicChat, removerParticipant, intendToRemoveParticipant);
+                relatedPublicChat.Participants.Remove(intendToRemoveParticipant);
+                _db.SaveChanges();
+                request.ModelDTO.OperationResult = true;
+                request.ModelDTO.ApplicationFeedBack = "The User Successfully Removed .";
             }
-            else
+            catch (Exception ex)
             {
                 request.ModelDTO.OperationResult = false;
-                request.ModelDTO.ApplicationFeedBack = "Owner or admin user can not be removed";
+                request.ModelDTO.ApplicationFeedBack = ex.Message;
             }
 
             return request.ModelDTO;
@@ -55,14 +46,14 @@ namespace Twitter.Clone.Messenger.Features.RemoveUserFromPublicChat.Handler
 
         bool CanRemoveUserFromPublicChat(PublicChat publicChat, Participant removerParticipant, Participant intendToRemoveParticipant)
         {
-            if (removerParticipant.IsOwner)
-                return true;
-
             if (intendToRemoveParticipant.IsOwner)
-                return false;
+                throw new NotAlloawedUserInRemoveFromChatException("Owner of chat can not be removed");
 
             if (!removerParticipant.IsOwner || !removerParticipant.IsAdmin)
-                return false;
+                throw new NotAlloawedUserInRemoveFromChatException("Just admins can remove user");
+
+            if (removerParticipant.IsAdmin && intendToRemoveParticipant.IsAdmin)
+                throw new NotAlloawedUserInRemoveFromChatException("Admins can removed just by owner ");
             else
                 return true;
         }

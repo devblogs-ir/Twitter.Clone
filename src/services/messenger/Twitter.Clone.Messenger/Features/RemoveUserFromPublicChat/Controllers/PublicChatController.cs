@@ -30,7 +30,6 @@ namespace Twitter.Clone.Messenger.Features.RemoveUserFromPublicChat.Controllers
             else
             {
                 return NotFound(removeModel);
-
             }
         }
     }

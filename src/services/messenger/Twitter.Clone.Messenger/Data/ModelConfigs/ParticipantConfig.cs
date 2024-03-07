@@ -9,6 +9,7 @@ namespace Messanger.Data.Configs
         public void Configure(EntityTypeBuilder<Participant> builder)
         {
             builder.HasKey(x => x.UserId);
+
             builder.HasOne(x => x.PublicChat).WithMany(x => x.Participants);
 
         }

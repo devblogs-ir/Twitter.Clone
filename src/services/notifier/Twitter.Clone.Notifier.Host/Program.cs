@@ -1,5 +1,4 @@
 using Twitter.Clone.Notifier.Host.Extensions;
-
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Twitter.Clone.Notifier.Common.Autofac;
@@ -18,6 +17,8 @@ builder.Host
         container.AddAutofacDependencyServices();
     });
 
+builder.Services.ConfigureBrokerService(builder.Configuration);
+builder.Services.ConfigureAppSettings(builder.Configuration);
 var app = builder.Build();
 
 app.Run();

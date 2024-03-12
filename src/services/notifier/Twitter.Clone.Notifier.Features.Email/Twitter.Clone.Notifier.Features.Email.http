@@ -1,6 +1,17 @@
-@Twitter.Clone.Notifier.Features.Email_HostAddress = http://localhost:5298
+@Twitter.Clone.Notifier.Features.Email_HostAddress = https://localhost:7284
 
-GET {{Twitter.Clone.Notifier.Features.Email_HostAddress}}/weatherforecast/
+GET {{Twitter.Clone.Notifier.Features.Email_HostAddress}}/email/
 Accept: application/json
 
+###
+
+GET {{Twitter.Clone.Notifier.Features.Email_HostAddress}}/email
+Content-Type: application/json
+
+{
+  "EmailToId":"1",
+  "EmailToName":"Zahra",
+  "EmailSubject":"",
+  "EmailBody":""
+}
 ###

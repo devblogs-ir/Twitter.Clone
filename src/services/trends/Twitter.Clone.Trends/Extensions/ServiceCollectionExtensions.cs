@@ -1,0 +1,51 @@
+﻿namespace Twitter.Clone.Trends.Extensions;
+
+public static class ServiceCollectionExtensions
+{
+    public static IServiceCollection ConfigureServiceDbContext(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddDbContext<TrendsDbContext>(options =>
+        {
+            var conStr = configuration.GetConnectionString(TrendsDbContext.ConnectionStringSectionName);
+            options.UseSqlServer(conStr);
+        });
+
+        return services;
+    }
+
+    public static IServiceCollection ConfigureBrokerService(this IServiceCollection services, IConfiguration configuration)
+    {
+        var settings = configuration.GetSection(BrokerAppSettings.SectionName)
+                                    .Get< BrokerAppSettings>();
+
+        if (settings is null)
+        { 
+            throw new AppSettingsNullReferenceException(nameof(BrokerAppSettings)); 
+        }
+
+        services.AddMassTransit(configure => {
+
+            configure.AddConsumers(typeof(Program).Assembly);
+
+            configure.UsingRabbitMq((context, rabbitConfigure) => {
+
+                rabbitConfigure.Host(host: settings.Host, configureHost =>
+                {
+                    configureHost.Username(settings.Username);
+                    configureHost.Password(settings.Password);
+
+                });
+
+                rabbitConfigure.ConfigureEndpoints(context);
+            });
+        });
+
+        return services;
+    }
+
+    public static IServiceCollection ConfigureAppSettings(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.Configure<AppSettings>(configuration);
+        return services;
+    }
+}

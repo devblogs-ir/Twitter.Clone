@@ -1,0 +1,15 @@
+{
+  "solution": {
+    "path": "Twitter.Clone.sln",
+    "projects": [
+      "src\\services\\notifier\\Twitter.Clone.Notifier.Host\\Twitter.Clone.Notifier.Host.csproj",
+      "src\\services\\notifier\\Twitter.Clone.Notifier.Common\\Twitter.Clone.Notifier.Common.csproj",
+      "src\\services\\notifier\\Twitter.Clone.Notifier.Features.Email\\Twitter.Clone.Notifier.Features.Email.csproj",
+      "src\\services\\notifier\\Twitter.Clone.Notifier.Features.Sms\\Twitter.Clone.Notifier.Features.Sms.csproj",
+      "src\\shared\\Twitter.Clone.MessagingContracts\\Twitter.Clone.MessagingContracts.csproj",
+      "tests\\Twitter.Clone.FunctionalTests\\Twitter.Clone.FunctionalTests.csproj",
+      "tests\\Twitter.Clone.IntegrationTests\\Twitter.Clone.IntegrationTests.csproj",
+      "tests\\Twitter.Clone.UnitTests\\Twitter.Clone.UnitTests.csproj"
+    ]
+  }
+}

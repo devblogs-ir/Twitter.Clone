@@ -1,0 +1,6 @@
+@Twitter.Clone.Timeline_HostAddress = http://localhost:5034
+
+GET {{Twitter.Clone.Timeline_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
